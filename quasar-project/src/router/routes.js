@@ -1,10 +1,15 @@
 
 const routes = [
   {
+    // name: MainLayout,
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      {
+        // IndexPage 首頁
+        path: '',
+        component: () => import('pages/IndexPage.vue')
+      }
     ]
   },
 
