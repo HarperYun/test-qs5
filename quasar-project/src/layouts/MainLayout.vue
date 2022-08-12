@@ -10,7 +10,7 @@
         晶糸
         </div>
 
-        <q-toolbar-title style="">
+        <q-toolbar-title class="col">
           <q-avatar>
             <img src="../img/JM_logo.svg">
           </q-avatar>
