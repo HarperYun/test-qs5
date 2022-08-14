@@ -9,7 +9,7 @@
     </q-field>
 
     <q-field label="密碼" >
-      <q-input v-model="model.password" :rules="rules.password" counter="20" />
+      <q-input v-model="form.password" :rules="rules.password" counter="20" />
     </q-field>
 
     <!-- <q-field
