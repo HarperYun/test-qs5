@@ -52,6 +52,8 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    // 後來加的
+    'no-unused-vars': 'off',
 
     // allow async-await
     'generator-star-spacing': 'off',

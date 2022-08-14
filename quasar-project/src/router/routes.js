@@ -9,6 +9,14 @@ const routes = [
         // IndexPage 首頁
         path: '',
         component: () => import('pages/IndexPage.vue')
+      },
+      {
+        // 註冊
+        path: 'signup',
+        component: () => import('pages/signUp.vue'),
+        meta: {
+          title: '註冊'
+        }
       }
     ]
   },
