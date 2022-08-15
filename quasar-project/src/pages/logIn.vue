@@ -1,21 +1,15 @@
 <template>
-  登入* | 註冊
-    <q-field
-      label="帳號"
-      >
-      <q-input v-model="model" />
-    </q-field>
+  <h6><b>登入</b> | 註冊</h6>
+  <q-form>
 
-    <q-field
-      label="密碼"
-      >
-      <q-input v-model="model" />
-    </q-field>
+    <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account" />
+    <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password" />
 
     <div class="q-pa-md q-gutter-sm">
-      <q-btn color="brown-5" label="確認" />
-      <q-btn color="white" text-color="black" label="取消" />
+      <q-btn type="submit" color="brown-5" label="登入" :loading="loading" @click="showLoading" />
+      <q-btn type="reset" color="white" text-color="black" label="取消" />
     </div>
+  </q-form>
 </template>
 
 <script setup>

@@ -106,7 +106,9 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {},
+      config: {
+        loading: { /* look at QuasarConfOptions from the API card */ }
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -119,7 +121,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Dialog'], // 對話框用
+      plugins: ['Dialog', 'Loading'], // Dialog 對話框，Loading
       components: ['QField', 'QCheckbox'] // 表單用+單選框
     },
 

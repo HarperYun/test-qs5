@@ -6,23 +6,28 @@
         <!-- 左側抽屜 -->
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
+        <q-btn-group outline>
+          <q-btn to="/" outline color="amber-5" label="首頁" />
+          <q-btn to="/AboutPage" outline color="amber-5" label="關於晶糸" />
+          <q-btn to="/InstructionsPage" outline color="amber-5" label="使用說明" />
+        </q-btn-group>
+
         <div class="col text-center text-weight-bold">
         晶糸
         </div>
 
-        <q-toolbar-title class="col">
+        <!-- logo圖 -->
+        <!-- <q-toolbar-title class="col">
           <q-avatar>
             <img src="../img/JM_logo.svg">
           </q-avatar>
-        </q-toolbar-title>
+        </q-toolbar-title> -->
 
         <q-btn-group outline>
-          <q-btn outline color="amber-5" label="首頁" />
-          <q-btn outline color="amber-5" label="關於晶糸" />
-          <q-btn outline color="amber-5" label="使用說明" />
-          <q-btn outline color="amber-5" label="註冊" />
-          <q-btn outline color="amber-5" label="登入" />
-          <q-btn outline color="amber-5" label="購物車" />
+          <q-btn to="/Signup" outline color="amber-5" label="註冊" />
+          <q-btn to="/LogIn" outline color="amber-5" label="登入" />
+          <q-btn to="" outline color="amber-5" label="購物車" />
+          <q-btn outline color="amber-5" label="登出" />
         </q-btn-group>
 
         <!-- 右側抽屜 -->

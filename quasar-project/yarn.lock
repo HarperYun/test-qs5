@@ -3280,6 +3280,11 @@
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
 
+"sweetalert2@^11.4.26":
+  "integrity" "sha512-YqH/C6IPudeWVK9R0x3pCOqP7m90Ae50tl98SQBpAwL3+UBl1WYD2+5OaKy0ybiVTKbYe76wwJ3PV+bITLjl+A=="
+  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.26.tgz"
+  "version" "11.4.26"
+
 "table@^6.8.0":
   "integrity" "sha512-s/fitrbVeEyHKFa7mFdkuQMWlH1Wgw/yEXMt5xACT4ZpzWFluehAxRtUUQKPuWhaLAWhFcVx6w3oC8VKaUfPGA=="
   "resolved" "https://registry.npmjs.org/table/-/table-6.8.0.tgz"
@@ -3497,6 +3502,11 @@
     "@intlify/shared" "9.2.0"
     "@intlify/vue-devtools" "9.2.0"
     "@vue/devtools-api" "^6.2.1"
+
+"vue-page-transition@^0.2.2":
+  "integrity" "sha512-qOx+llJ28XX0VwJNJ4GVaeNBPRmPMZac2QQgrIHVUhpXyJx2CQ2XvoQOpGD1ge7QMY3PjZ6fwTbdBwZkA3I9qA=="
+  "resolved" "https://registry.npmjs.org/vue-page-transition/-/vue-page-transition-0.2.2.tgz"
+  "version" "0.2.2"
 
 "vue-router@^4.0.0", "vue-router@^4.0.12":
   "integrity" "sha512-XvK81bcYglKiayT7/vYAg/f36ExPC4t90R/HIpzrZ5x+17BOWptXLCrEPufGgZeuq68ww4ekSIMBZY1qdUdfjA=="
