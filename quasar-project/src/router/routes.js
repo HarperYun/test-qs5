@@ -1,6 +1,7 @@
 
 const routes = [
   {
+
     // name: MainLayout,
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
@@ -12,7 +13,7 @@ const routes = [
       },
       {
         // 關於晶糸
-        path: 'AboutPage',
+        path: 'aboutpage',
         component: () => import('pages/AboutPage.vue'),
         meta: {
           title: '關於晶糸'
@@ -20,7 +21,7 @@ const routes = [
       },
       {
         // 使用說明
-        path: 'InstructionsPage',
+        path: 'instructionspage',
         component: () => import('pages/InstructionsPage.vue'),
         meta: {
           title: '使用說明'
@@ -28,7 +29,7 @@ const routes = [
       },
       {
         // 註冊
-        path: 'Signup',
+        path: 'signup',
         component: () => import('pages/SignUp.vue'),
         meta: {
           title: '註冊'
@@ -36,7 +37,7 @@ const routes = [
       },
       {
         // 登入
-        path: 'LogIn',
+        path: 'login',
         component: () => import('pages/LogIn.vue'),
         meta: {
           title: '登入'

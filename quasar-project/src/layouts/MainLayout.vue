@@ -8,8 +8,8 @@
 
         <q-btn-group outline>
           <q-btn to="/" outline color="amber-5" label="首頁" />
-          <q-btn to="/AboutPage" outline color="amber-5" label="關於晶糸" />
-          <q-btn to="/InstructionsPage" outline color="amber-5" label="使用說明" />
+          <q-btn to="/aboutpage" outline color="amber-5" label="關於晶糸" />
+          <q-btn to="/instructionspage" outline color="amber-5" label="使用說明" />
         </q-btn-group>
 
         <div class="col text-center text-weight-bold">
@@ -24,8 +24,8 @@
         </q-toolbar-title> -->
 
         <q-btn-group outline>
-          <q-btn to="/Signup" outline color="amber-5" label="註冊" />
-          <q-btn to="/LogIn" outline color="amber-5" label="登入" />
+          <q-btn to="/signup" outline color="amber-5" label="註冊" />
+          <q-btn to="/login" outline color="amber-5" label="登入" />
           <q-btn to="" outline color="amber-5" label="購物車" />
           <q-btn outline color="amber-5" label="登出" />
         </q-btn-group>

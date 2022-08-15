@@ -1,14 +1,14 @@
 <template>
   <h6>登入 | <b>註冊</b></h6>
-  <q-form @submit.prevent="register" @reset="onReset" class="q-gutter-md">
+  <q-form @submit="register" @reset="reset" class="q-gutter-md">
 
-    <q-input filled v-model="form.email" label="信箱 *" lazy-rules :rules="rules.email" />
-    <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account" counter="20" maxlength="20" />
-    <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password" counter="20" maxlength="20" />
+    <q-input filled v-model="form.email" label="信箱 *" lazy-rules :rules="rules.email"/>
+    <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account"/>
+    <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password"/>
 
     <div class="q-pa-md q-gutter-sm">
       <q-btn type="submit" color="brown-5" label="註冊" :loading="loading"/>
-      <q-btn type="reset" color="white" text-color="black" label="取消" />
+      <q-btn type="reset" color="white" text-color="black" label="清除" />
     </div>
   </q-form>
 </template>
@@ -49,12 +49,9 @@ const rules = reactive({
 })
 
 const register = async () => {
-  console.log('111')
   // if (!valid.value) return
   loading.value = true
   try {
-    console.log('111')
-
     await api.post('/users', form)
     await Swal.fire({
       icon: 'success',
