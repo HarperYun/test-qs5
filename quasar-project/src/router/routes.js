@@ -20,11 +20,11 @@ const routes = [
         }
       },
       {
-        // 使用說明
-        path: 'instructionspage',
-        component: () => import('pages/InstructionsPage.vue'),
+        // 聯絡我們
+        path: 'contactus',
+        component: () => import('pages/indexpage/ContactUs.vue'),
         meta: {
-          title: '使用說明'
+          title: '聯絡我們'
         }
       },
       {

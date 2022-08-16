@@ -1,16 +1,36 @@
+<!-- <style>
+    html {
+      background: black;
+    }
+</style> -->
+
 <template>
-  <h6><b>註冊帳號</b></h6>
-  <q-form @submit="register" @reset="reset" class="q-gutter-md">
 
-    <q-input filled v-model="form.email" label="信箱 *" lazy-rules :rules="rules.email"/>
-    <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account"/>
-    <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password"/>
+  <div class="q-pa-md row q-gutter-md window-hight window-width justify-center">
+    <q-card class="my-card bg-amber-5">
 
-    <div class="q-pa-md q-gutter-sm">
-      <q-btn type="submit" color="brown-5" label="註冊" :loading="loading"/>
-      <q-btn type="reset" color="white" text-color="black" label="清除" />
-    </div>
-  </q-form>
+      <q-card-section class="text-center">
+        <h6><b>註冊帳號</b></h6>
+      </q-card-section>
+
+      <q-form @submit="register" @reset="reset" class="q-gutter-md">
+        <q-card-section>
+          <q-input filled v-model="form.email" label="信箱 *" lazy-rules :rules="rules.email"/>
+          <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account"/>
+          <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password"/>
+        </q-card-section>
+
+        <q-card-section>
+          <div class="q-pa-md q-gutter-sm">
+            <q-btn type="submit" color="brown-5" label="註冊" :loading="loading"/>
+            <q-btn type="reset" color="white" text-color="black" label="清除" />
+          </div>
+        </q-card-section>
+
+      </q-form>
+    </q-card>
+  </div>
+
 </template>
 
 <script setup>
