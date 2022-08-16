@@ -9,11 +9,11 @@
         <q-btn-group outline>
           <q-btn to="/" outline color="amber-5" label="首頁" />
           <q-btn to="/aboutpage" outline color="amber-5" label="關於晶糸" />
-          <q-btn to="/instructionspage" outline color="amber-5" label="使用說明" />
+          <!-- <q-btn to="/insㄋtructionspage" outline color="amber-5" label="使用說明" /> -->
         </q-btn-group>
 
         <div class="col text-center text-weight-bold">
-        晶糸
+        <b>晶 ✧ 糸</b>
         </div>
 
         <!-- logo圖 -->
@@ -36,31 +36,15 @@
 
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
-      <!-- drawer content -->
-    </q-drawer>
-
-    <q-drawer v-model="rightDrawerOpen" side="right" overlay bordered>
-      <!-- drawer content -->
-      <!-- 登入 | 註冊
-      <q-field
-        label="帳號"
-        >
-        <q-input v-model="model" />
-      </q-field>
-
-      <q-field
-        label="密碼"
-        >
-        <q-input v-model="model" />
-      </q-field>
-
-      <div class="q-pa-md q-gutter-sm">
-        <q-btn color="brown-5" label="確認" />
-        <q-btn color="white" text-color="black" label="取消" />
-      </div> -->
+    <!-- 左側抽屜 -->
+    <q-drawer v-model="leftDrawerOpen"  side="left" overlay bordered elevated>
+      <!-- 放商品分類 -->
 
     </q-drawer>
+
+        <!-- 右側抽屜 -->
+    <!-- <q-drawer v-model="rightDrawerOpen" side="right" overlay bordered>
+    </q-drawer> -->
 
     <q-page-container>
       <router-view />
