@@ -14,7 +14,7 @@ const routes = [
       {
         // 關於晶糸
         path: 'aboutpage',
-        component: () => import('pages/AboutPage.vue'),
+        component: () => import('pages/indexpage/AboutPage.vue'),
         meta: {
           title: '關於晶糸'
         }

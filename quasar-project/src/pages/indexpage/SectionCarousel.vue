@@ -15,25 +15,18 @@
       @mouseenter="autoplay = false"
       @mouseleave="autoplay = true"
     >
-      <q-carousel-slide name="first" img-src="https://cdn.quasar.dev/img/mountains.jpg">
+      <q-carousel-slide name="first" img-src="src/img/bag_01/LINE_ALBUM_2022816_220816_1.jpg">
         <div class="absolute-bottom custom-caption">
-          <div class="text-h6 text-center">新 會 員 註 冊</div>
-          <div class="text-h6 text-center">享 120 元 購 物 金</div>
+          <div class="text-h6 text-center"><b>新 會 員 註 冊</b></div>
+          <div class="text-h6 text-center"><b>享 120 元 購 物 金</b></div>
         </div>
       </q-carousel-slide>
 
-      <q-carousel-slide name="second" img-src="https://cdn.quasar.dev/img/parallax1.jpg">
+      <q-carousel-slide name="second" img-src="src/img/bag_01/LINE_ALBUM_2022816_220816_6.jpg">
         <div class="absolute-bottom custom-caption">
-          <div class="text-h6 text-center">新 品 ✧ 上 市</div>
+          <div class="text-h6 text-center"><b>新 品 ✧ 上 市</b></div>
         </div>
       </q-carousel-slide>
-
-      <!-- <q-carousel-slide name="third" img-src="https://cdn.quasar.dev/img/parallax2.jpg">
-        <div class="absolute-bottom custom-caption">
-          <div class="text-h2">Third stop</div>
-          <div class="text-subtitle1">Famous Bridge</div>
-        </div>
-      </q-carousel-slide> -->
 
     </q-carousel>
   </div>

@@ -7,8 +7,8 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-btn-group outline>
-          <q-btn to="/" outline color="amber-5" label="首頁" />
-          <q-btn to="/aboutpage" outline color="amber-5" label="關於晶糸" />
+          <q-btn to="/" outline color="amber-5" icon="home" label="首頁" />
+          <q-btn to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" />
           <!-- <q-btn to="/insㄋtructionspage" outline color="amber-5" label="使用說明" /> -->
         </q-btn-group>
 
@@ -24,10 +24,10 @@
         </q-toolbar-title> -->
 
         <q-btn-group outline>
-          <q-btn to="/signup" outline color="amber-5" label="註冊" />
-          <q-btn to="/login" outline color="amber-5" label="登入" />
-          <q-btn to="" outline color="amber-5" label="購物車" />
-          <q-btn outline color="amber-5" label="登出" />
+          <q-btn to="/signup" outline color="amber-5" icon="login" label="註冊" />
+          <q-btn to="/login" outline color="amber-5" icon="person" label="登入" />
+          <q-btn to="" outline color="amber-5" icon="shopping_cart" label="購物車" />
+          <q-btn outline color="amber-5" icon="logout" label="登出" />
         </q-btn-group>
 
         <!-- 右側抽屜 -->

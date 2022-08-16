@@ -1,5 +1,5 @@
 <template>
-  <h6>登入 | <b>註冊</b></h6>
+  <h6><b>註冊帳號</b></h6>
   <q-form @submit="register" @reset="reset" class="q-gutter-md">
 
     <q-input filled v-model="form.email" label="信箱 *" lazy-rules :rules="rules.email"/>
@@ -64,7 +64,7 @@ const register = async () => {
       icon: 'error',
       title: '失敗',
       // 'error.response.data.message' 是去抓 axios 回傳資料的message
-      text: error.isAxiosError ? error.response.data.message : '發生錯誤'
+      text: (error.isAxiosError && error.response.data) ? error.response.data.message : '發生錯誤'
     })
   }
   loading.value = false
