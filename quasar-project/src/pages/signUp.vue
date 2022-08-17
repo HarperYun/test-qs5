@@ -7,7 +7,7 @@
 <template>
 
   <div class="q-pa-md row q-gutter-md window-hight window-width justify-center">
-    <q-card class="my-card bg-amber-5">
+    <q-card class="my-card bg-amber-5 text-brown-9" style="width: 400px;">
 
       <q-card-section class="text-center">
         <h6><b>註冊帳號</b></h6>

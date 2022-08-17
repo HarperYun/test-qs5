@@ -1,7 +1,7 @@
 <!-- <section-carousel/> -->
 <template>
 <div class="q-pa-md text-white" >
-  <div class="q-gutter-md">
+  <div class="q-gutter-md" >
     <!-- navigation => 控制紐(圓點) -->
     <q-carousel
       arrows

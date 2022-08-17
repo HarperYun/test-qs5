@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { api } from 'boot/axios.js'
+import { api, apiAuth } from 'boot/axios.js'
 import Swal from 'sweetalert2'
 import router from 'src/router'
 
@@ -19,7 +19,7 @@ export const useUserStore = defineStore({
     },
     // 是否管理員
     isAdmin () {
-      return this.sole === 1
+      return this.role === 1
     },
     // 隨機大頭貼，用帳號作為變化
     avatar () {
@@ -51,6 +51,35 @@ export const useUserStore = defineStore({
           text: (error.isAxiosError && error.response.data) ? error.response.data.message : '發生錯誤1'
         })
       }
+    },
+    async logout () {
+      try {
+        // 請求帶jwt的話要用以下的寫法
+        // 因為已經在 axios 裡面設定過簡潔寫法，因此可刪掉原本的一串，直接引入
+        // await api.delete('/users/logout', {
+        //   headers: {
+        //     authorization: `Bearer ${this.token}`
+        //   }
+        // })
+        await apiAuth.delete('/users/logout')
+        router.push('/')
+        Swal.fire({
+          icon: 'success',
+          title: '成功',
+          text: '已登出'
+        })
+      } catch (_) {
+        Swal.fire({
+          icon: 'success',
+          title: '成功',
+          text: '強制登出'
+        })
+        router.push('/')
+      }
+      this.token = ''
+      this.account = ''
+      this.role = 0
+      this.cart = 0
     }
   }
 })

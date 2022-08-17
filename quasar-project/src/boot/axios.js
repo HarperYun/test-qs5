@@ -1,5 +1,6 @@
 import { boot } from 'quasar/wrappers'
 import axios from 'axios'
+import { useUserStore } from 'src/stores/user'
 
 // Be careful when using SSR for cross-request state pollution
 // due to creating a Singleton instance here;
@@ -26,4 +27,15 @@ export default boot(({ app }) => {
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API
+})
+
+export const apiAuth = axios.create({
+  baseURL: import.meta.env.VITE_API
+})
+
+// axios --> axios 攔截請求 --> API server --> axios 攔截回應 --> 呼叫的地方
+apiAuth.interceptors.request.use(config => {
+  const user = useUserStore()
+  config.headers.authorization = `Bearer ${user.token}`
+  return config
 })
