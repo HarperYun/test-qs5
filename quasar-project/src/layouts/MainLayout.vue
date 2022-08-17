@@ -8,14 +8,14 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-btn-group outline>
-          <q-btn to="/" outline color="amber-5" icon="home" label="首頁" />
+          <q-btn to="/" outline color="amber-5" label="晶 ✧ 糸" />
           <q-btn to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" />
           <q-btn to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" />
           <!-- <q-btn to="/insㄋtructionspage" outline color="amber-5" label="使用說明" /> -->
         </q-btn-group>
 
         <div class="col text-center text-weight-bold">
-        <b>晶 ✧ 糸</b>
+          <b> </b>
         </div>
 
         <!-- logo圖 -->

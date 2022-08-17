@@ -12,7 +12,7 @@
         </q-btn-group>
 
         <div class="col text-center text-weight-bold">
-        <b>後台管理</b>
+        <b> </b>
         </div>
 
         <q-btn-group outline>

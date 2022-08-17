@@ -30,7 +30,6 @@ export const useUserStore = defineStore({
   actions: {
     async login (form) {
       try {
-        console.log(123)
         const { data } = await api.post('/users/login', form)
         this.token = data.result.token
         this.account = data.result.account
@@ -61,20 +60,22 @@ export const useUserStore = defineStore({
         //     authorization: `Bearer ${this.token}`
         //   }
         // })
+
         await apiAuth.delete('/users/logout')
-        router.push('/')
+        this.router.push('/')
         Swal.fire({
           icon: 'success',
           title: '成功',
           text: '已登出'
         })
-      } catch (_) {
+      } catch (err) {
+        console.log(err)
         Swal.fire({
           icon: 'success',
           title: '成功',
           text: '強制登出'
         })
-        router.push('/')
+        this.router.push('/')
       }
       this.token = ''
       this.account = ''
