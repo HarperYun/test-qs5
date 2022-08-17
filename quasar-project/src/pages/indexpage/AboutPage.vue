@@ -1,4 +1,6 @@
 <!-- 關於 -->
 <template>
-  <h5>關於晶糸</h5>
+  <div class="window-width text-center">
+    <h4>關於晶糸</h4>
+  </div>
 </template>
