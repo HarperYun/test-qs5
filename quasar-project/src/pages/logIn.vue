@@ -15,7 +15,7 @@
 
         <q-card-section>
           <div class="q-pa-md q-gutter-sm">
-            <q-btn type="submit" color="brown-5" label="登入" :loading="loading"/>
+            <q-btn type="submit" color="brown-9" label="登入" :loading="loading"/>
             <q-btn type="reset" color="white" text-color="black" label="清除" />
           </div>
         </q-card-section>

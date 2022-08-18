@@ -38,13 +38,160 @@
       <q-tab-panels v-model="tab" animated>
 
         <q-tab-panel name="new">
-          <div class="text-h6">New</div>
-          new new new new new new new new new new new new new
+          <div class="q-pt-lg q-pb-lg row items-start q-gutter-md justify-center">
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+          </div>
         </q-tab-panel>
 
         <q-tab-panel name="hot">
-          <div class="text-h6">Hot</div>
-          hot hot hot hot hot hot hot hot hot hot hot hot hot
+          <div class="q-pt-lg q-pb-lg row items-start q-gutter-md justify-center">
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
+              <img src="https://cdn.quasar.dev/img/mountains.jpg">
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+            </q-card>
+
+          </div>
+
         </q-tab-panel>
       </q-tab-panels>
     </q-card>

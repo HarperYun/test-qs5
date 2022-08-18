@@ -1,4 +1,5 @@
 <!-- 底色 blue-grey-10 字色 teal-2 -->
+<!-- col-xs-6 col-sm-4 col-md-3 -->
 <template>
   <q-layout view="hHh lpR fFf">
 
