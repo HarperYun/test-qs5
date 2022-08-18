@@ -11,47 +11,82 @@
   <div>
     <q-separator />
 
-    <q-dialog v-model="dialog" persistent >
-      <q-card style="width: 700px; max-width: 80vw;">
-        <q-card-section>
-          <div class="text-h6">{{ form._id.length > 0 ? '編輯商品' : '新增商品' }}</div>
-        </q-card-section>
+    <q-dialog v-model="dialog" persistent>
+      <div>
+        <q-form @submit.prevent="submitForm">
+          <q-card style="width: 700px; max-width: 80vw;">
+            <q-card-section>
+              <div class="text-h6">{{ form._id.length > 0 ? '編輯商品' : '新增商品' }}</div>
+            </q-card-section>
 
-        <!-- <q-card-section class="q-pt-none">
-          Click/Tap on the backdrop.
-        </q-card-section> -->
-
-        <q-card-section>
-          <div class="row justify-center">
-            <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-              <q-input filled v-model="form.name" label="名稱" />
-            </div>
-            <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-              <q-input filled type="number" v-model="form.price" label="價格" />
-            </div>
-            <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-              <q-select filled :options="categories" v-model='form.category' label="分類" />
-            </div>
-            <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-              <q-checkbox v-model='form.sell' label="是否上架"  />
-            </div>
-            <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-              <div class="row items-start">
-                <q-file v-model="form.image"  label="上傳圖片" accept="image/*" filled counter multiple max-files="6" style="max-width: 300px" />
+            <q-card-section>
+              <div class="row justify-center">
+                <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
+                  <q-input
+                  filled
+                  v-model="form.name"
+                  :rules="[rules.required]"
+                  label="名稱"
+                  />
+                </div>
+                <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
+                  <q-input
+                  filled
+                  type="number"
+                  :rules="[rules.required, rules.price]"
+                  v-model="form.price"
+                  label="價格"
+                  />
+                </div>
+                <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
+                  <q-select
+                  filled
+                  :options="categories"
+                  :rules="[rules.required]"
+                  v-model='form.category'
+                  label="分類"
+                  />
+                </div>
+                <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
+                  <q-checkbox
+                  v-model='form.sell'
+                  label="是否上架"  />
+                </div>
+                <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
+                  <div class="row items-start">
+                    <q-file
+                    v-model="form.image"
+                    label="上傳圖片"
+                    accept="image/*"
+                    filled
+                    counter
+                    multiple
+                    max-files="6"
+                    style="max-width: 300px"
+                    :rules="[rules.size]"
+                    />
+                  </div>
+                </div>
+                <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
+                  <q-input
+                  filled type="textarea"
+                  v-model="form.description"
+                  label="商品描述"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-              <q-input filled type="textarea" v-model="form.description" label="商品描述" />
-            </div>
-          </div>
 
-        </q-card-section>
+            </q-card-section>
 
-        <q-card-actions align="center" class="q-mb-md">
-          <q-btn class="bg-blue-grey-10 text-white" @click='submit' label="確定" v-close-popup />
-          <q-btn class="bg-white text-blue-grey-10" @click='dialog = false' label="取消" v-close-popup />
-        </q-card-actions>
-      </q-card>
+              <q-card-actions align="center" class="q-mb-md">
+                <q-btn class="bg-blue-grey-10 text-white" type="submit" @click='submit' label="確定" v-close-popup />
+                <q-btn class="bg-white text-blue-grey-10" type="" @click='dialog = false' label="取消" v-close-popup />
+              </q-card-actions>
+
+          </q-card>
+
+        </q-form>
+      </div>
     </q-dialog>
 
   </div>
@@ -90,8 +125,17 @@ const form = reactive({
   description: ''
 })
 
+// 用規則分類的規則
 const rules = reactive({
-
+  required (v) {
+    return !!v || '必填'
+  },
+  price (v) {
+    return v > -1 || '必須大於等於 0'
+  },
+  size (v) {
+    return !v || !v.length || v[0].size < 1024 * 1024 || '檔案必須小於 1MB'
+  }
 })
 
 const text = ref('')
