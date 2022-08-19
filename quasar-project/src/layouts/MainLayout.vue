@@ -1,5 +1,12 @@
 <!-- bg-brown-9 text-amber-5 -->
 <!-- col-xs-6 col-sm-4 col-md-3 -->
+<style>
+html {
+  background-color: rgb(255, 251, 237);
+  /* background-color: rgb(236, 246, 249); */
+}
+</style>
+
 <template>
   <q-layout view="hHh lpR fFf">
 
@@ -8,10 +15,8 @@
         <!-- 左側抽屜按鈕 - 放分類 -->
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-btn-group outline>
-          <q-btn to="/" outline color="amber-5"><b>晶  糸</b></q-btn>
-          <q-btn to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" />
-          <q-btn to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" />
+        <q-btn-group flat>
+          <q-btn to="/" class="text-amber-5 text-h6" ><b>晶 ✧ 糸</b></q-btn>
           <!-- <q-btn to="/insㄋtructionspage" outline color="amber-5" label="使用說明" /> -->
         </q-btn-group>
 
@@ -28,6 +33,8 @@
 
         <q-btn-group outline>
           <q-btn v-if="isLogin && isAdmin" to="/admin" outline color="amber-5" icon="admin_panel_settings" label="後台管理" />
+          <q-btn v-if="isLogin && !isAdmin" to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" />
+          <q-btn v-if="isLogin && !isAdmin" to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" />
           <q-btn v-if="!isLogin" to="/signup" outline color="amber-5" icon="login" label="註冊" />
           <q-btn v-if="!isLogin" to="/login" outline color="amber-5" icon="person" label="登入" />
           <q-btn v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" icon="person_outline" label="會員資料" />
@@ -49,6 +56,14 @@
 
       <div class="q-pa-md" style="max-width: 350px">
         <q-list bordered>
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="piano" />
+            </q-item-section>
+
+            <q-item-section>0. 全部商品</q-item-section>
+          </q-item>
+
           <q-item clickable v-ripple>
             <q-item-section avatar>
               <q-icon color="brown-9" name="brightness_low" />
@@ -85,7 +100,7 @@
       </div>
     </q-drawer>
 
-    <q-footer elevated class="bg-brown-9 text-amber-5 text-center">
+    <q-footer bordered class="bg-brown-9 text-amber-5 text-center">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>

@@ -24,9 +24,9 @@
       <q-tabs
         v-model="tab"
         dense
-        class="text-brown-3 bg-brown-9"
-        active-color="amber-5"
-        indicator-color="amber-5"
+        class="text-brown-3 bg-amber-5"
+        active-color="brown-9"
+        indicator-color="brown-9"
         align="justify"
       >
         <q-tab name="new" icon="flare" checked label="本季新品" />
