@@ -1,7 +1,7 @@
 <!-- 商品管理 -->
 <template>
   <div class="window-width text-center">
-    <h4>商品管理</h4>
+    <h5>商品管理</h5>
   </div>
 
   <div class="q-ma-md">
@@ -90,6 +90,7 @@
 
   </div>
 
+<!-- ----------------------------------------------------------------------------------------- -->
   <q-list class="q-pa-xs q-ma-none" style="max-width: 80vw;" bordered v-if='products.length > 0' >
 
     <q-item clickable v-ripple class="q-ma-none" v-for='(product, idx) in products' :key='product._id'>
@@ -107,6 +108,8 @@
   <q-list v-else class="text-center">
     <p>沒有商品</p>
   </q-list>
+
+<!-- ----------------------------------------------------------------------------------------- -->
 
 </template>
 

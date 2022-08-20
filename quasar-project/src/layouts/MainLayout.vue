@@ -8,7 +8,7 @@ html {
 </style>
 
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh lpR fff">
 
     <q-header reveal class="bg-brown-9 text-amber-5" height-hint="98">
       <q-toolbar>
@@ -56,7 +56,7 @@ html {
 
       <div class="q-pa-md" style="max-width: 350px">
         <q-list bordered>
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="">
             <q-item-section avatar>
               <q-icon color="brown-9" name="piano" />
             </q-item-section>
@@ -72,7 +72,7 @@ html {
             <q-item-section>1. 天然石手鍊</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="">
             <q-item-section avatar>
               <q-icon color="brown-9" name="spa" />
             </q-item-section>
@@ -80,7 +80,7 @@ html {
             <q-item-section>2. 蠟線編繩</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="">
             <q-item-section avatar>
               <q-icon color="brown-9" name="filter_vintage" />
             </q-item-section>
@@ -88,7 +88,7 @@ html {
             <q-item-section>3. 布品手作</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="">
             <q-item-section avatar>
               <q-icon color="brown-9" name="cruelty_free" />
             </q-item-section>

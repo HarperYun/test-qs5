@@ -100,9 +100,20 @@ const routes = [
           login: true,
           admin: false
         }
+      },
+      {
+        // 商品個別頁面
+        path: 'product/:id',
+        component: () => import('pages/indexpage/ProductOne.vue'),
+        meta: {
+          title: 'XXX',
+          login: false,
+          admin: false
+        }
       }
     ]
   },
+  // ----------------------------------------------------------------------
   // 管理員路由
   {
     path: '/admin',
