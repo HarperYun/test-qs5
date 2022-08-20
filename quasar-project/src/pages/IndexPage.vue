@@ -49,69 +49,6 @@
               </q-card-actions>
             </q-card>
 
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
-              <img src="https://cdn.quasar.dev/img/mountains.jpg">
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="favorite" />
-                <q-btn flat round color="teal" icon="bookmark" />
-                <q-btn flat round color="primary" icon="share" />
-              </q-card-actions>
-            </q-card>
-
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
-              <img src="https://cdn.quasar.dev/img/mountains.jpg">
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="favorite" />
-                <q-btn flat round color="teal" icon="bookmark" />
-                <q-btn flat round color="primary" icon="share" />
-              </q-card-actions>
-            </q-card>
-
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
-              <img src="https://cdn.quasar.dev/img/mountains.jpg">
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="favorite" />
-                <q-btn flat round color="teal" icon="bookmark" />
-                <q-btn flat round color="primary" icon="share" />
-              </q-card-actions>
-            </q-card>
-
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
-              <img src="https://cdn.quasar.dev/img/mountains.jpg">
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="favorite" />
-                <q-btn flat round color="teal" icon="bookmark" />
-                <q-btn flat round color="primary" icon="share" />
-              </q-card-actions>
-            </q-card>
-
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
-              <img src="https://cdn.quasar.dev/img/mountains.jpg">
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="favorite" />
-                <q-btn flat round color="teal" icon="bookmark" />
-                <q-btn flat round color="primary" icon="share" />
-              </q-card-actions>
-            </q-card>
-
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
-              <img src="https://cdn.quasar.dev/img/mountains.jpg">
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="favorite" />
-                <q-btn flat round color="teal" icon="bookmark" />
-                <q-btn flat round color="primary" icon="share" />
-              </q-card-actions>
-            </q-card>
-
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3">
-              <img src="https://cdn.quasar.dev/img/mountains.jpg">
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="favorite" />
-                <q-btn flat round color="teal" icon="bookmark" />
-                <q-btn flat round color="primary" icon="share" />
-              </q-card-actions>
-            </q-card>
-
           </div>
         </q-tab-panel>
 
@@ -200,25 +137,40 @@
   </q-page>
 </template>
 
-<script>
-
-import SectionCarousel from '../pages/indexpage/SectionCarousel.vue'
-import { ref } from 'vue'
+<!-- <script>
 
 export default {
   components: {
     SectionCarousel
   },
-  setup () {
-    return {
-      tab: ref('mails'),
-      innerTab: ref('innerMails'),
-      splitterModel: ref(20)
-    }
+}
+
+</script> -->
+
+<script setup>
+import SectionCarousel from '../pages/indexpage/SectionCarousel.vue'
+import { ref, reactive } from 'vue'
+import Swal from 'sweetalert2'
+import { api } from 'src/boot/axios'
+import ProductCard from 'src/components/ProductsCard'
+
+const tab = ref('mails')
+const innerTab = ref('innerMails')
+const splitterModel = ref(20)
+
+const products = reactive({})
+
+const init = async () => {
+  try {
+    const { data } = await api.get('/products')
+    products.push(...data.result)
+  } catch (error) {
+    Swal.fire({
+      icon: 'error',
+      title: '失敗',
+      text: '伺服器錯誤'
+    })
   }
 }
 
-</script>
-
-<script setup>
 </script>
