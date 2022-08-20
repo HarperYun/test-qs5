@@ -90,15 +90,15 @@
 
   </div>
 
-  <q-list class="q-pa-xs q-ma-none" style="max-width: 80vw;" bordered v-if='items.length > 0' >
+  <q-list class="q-pa-xs q-ma-none" style="max-width: 80vw;" bordered v-if='products.length > 0' >
 
-    <q-item clickable v-ripple class="q-ma-none" v-for='(item, idx) in items' :key='item._id'>
+    <q-item clickable v-ripple class="q-ma-none" v-for='(product, idx) in products' :key='product._id'>
       <q-item-section avatar >
-        <img :src='item.image'>
+        <img :src='product.image'>
       </q-item-section>
-      <q-item-section >{{ item.name }}</q-item-section>
+      <q-item-section >{{ product.name }}</q-item-section>
       <q-item-section class="q-pa-sm q-gutter-sm justify-end">
-        <q-btn class="bg-green-10 text-white" style="" @click="openDialog(item._id, idx)" icon='border_color' label="編輯" />
+        <q-btn class="bg-green-10 text-white" style="" @click="openDialog(product._id, idx)" icon='border_color' label="編輯" />
       </q-item-section>
     </q-item>
 
@@ -117,7 +117,7 @@ import { apiAuth } from 'boot/axios'
 
 const categories = reactive(['天然石手鍊', '蠟線編繩', '布品手作', '棉麻編織'])
 const text = ref('')
-const items = reactive([])
+const products = reactive([])
 const form = reactive({
   _id: '',
   name: '',
@@ -148,11 +148,11 @@ const rules = reactive({
 const openDialog = (_id, idx) => {
   form._id = _id
   if (idx > -1) {
-    form.name = items[idx].name
-    form.price = items[idx].price
-    form.category = items[idx].category
-    form.sell = items[idx].sell
-    form.description = items[idx].description
+    form.name = products[idx].name
+    form.price = products[idx].price
+    form.category = products[idx].category
+    form.sell = products[idx].sell
+    form.description = products[idx].description
   } else {
     form.name = ''
     form.price = 0
@@ -183,7 +183,7 @@ const submitForm = async () => {
   try {
     if (form._id.length === 0) {
       const { data } = await apiAuth.post('/products', fd)
-      items.push(data.result)
+      products.push(data.result)
       Swal.fire({
         icon: 'success',
         title: '成功',
@@ -191,7 +191,7 @@ const submitForm = async () => {
       })
     } else {
       const { data } = await apiAuth.patch('/products/' + form._id, fd)
-      items[form.idx] = data.result
+      products[form.idx] = data.result
       Swal.fire({
         icon: 'success',
         title: '成功',
@@ -212,7 +212,7 @@ const submitForm = async () => {
 const init = async () => {
   try {
     const { data } = await apiAuth.get('/products/all')
-    items.push(...data.result)
+    products.push(...data.result)
   } catch (error) {
     console.log(error)
     Swal.fire({

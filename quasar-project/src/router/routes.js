@@ -127,8 +127,8 @@ const routes = [
         }
       },
       {
-        path: 'itemspage',
-        component: () => import('src/pages/administrator/ItemsPage.vue'),
+        path: 'productspage',
+        component: () => import('src/pages/administrator/ProductsPage.vue'),
         meta: {
           title: '後台管理｜商品管理',
           login: true,

@@ -152,7 +152,7 @@ import SectionCarousel from '../pages/indexpage/SectionCarousel.vue'
 import { ref, reactive } from 'vue'
 import Swal from 'sweetalert2'
 import { api } from 'src/boot/axios'
-import ProductCard from 'src/components/ProductsCard'
+import ProductCard from 'src/components/ProductsCard.vue'
 
 const tab = ref('mails')
 const innerTab = ref('innerMails')

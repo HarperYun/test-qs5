@@ -38,7 +38,7 @@
             <q-item-section>1. 會員管理</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="/admin/itemspage">
+          <q-item clickable v-ripple to="/admin/productspage">
             <q-item-section avatar>
               <q-icon color="brown-9" name="local_cafe" />
             </q-item-section>
