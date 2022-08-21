@@ -18,7 +18,7 @@
         </div>
 
         <q-btn-group outline>
-          <q-btn to="/admin" outline color="teal-2" icon="admin_panel_settings" label="後台管理"  />
+          <!-- <q-btn to="/admin" outline color="teal-2" icon="admin_panel_settings" label="後台管理"  /> -->
           <q-btn outline color="teal-2" icon="logout" @click="logout" label="登出" />
         </q-btn-group>
 

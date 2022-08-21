@@ -10,7 +10,7 @@
     > -->
 
     <!-- 輪播圖 - 外接 -->
-    <!-- <section-carousel/> -->
+    <section-carousel/>
 
     <!-- <div style="position: absolute; left: 50%; transform: translateX(-50%);">
       <q-btn-group>
