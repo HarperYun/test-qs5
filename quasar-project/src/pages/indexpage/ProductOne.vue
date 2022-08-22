@@ -11,17 +11,17 @@
       <div class="text-h3 text-left q-pa-lg">{{ product.name }}</div>
       <div class="text-h5 text-left q-pl-lg q-pb-md">${{ product.price }}</div>
       <div class="text-left q-pl-lg q-pb-sm" style="white-space: pre;">{{ product.description }}</div>
-      <q-input class="q-ma-md" filled type="number" v-model="handlong" :rules='handlongRule' label="手腕圍 （請取整數）" />
+      <!-- <q-input class="q-ma-md" filled type="number" v-model="format" :rules='formatRule' label="手腕圍 （請取整數）" /> -->
       <q-input class="q-ma-md" filled type="number" v-model="quantity" :rules='quantityRule' label="數量" />
       <q-input
         class="q-ma-md"
-        v-model="textareaModel"
+        v-model="remark"
         filled
         clearable
         type="textarea"
         color="red-12"
         label="備註"
-        hint="客製化長度及需求請在此填寫，非必填"
+        hint="客製化長度及其他需求請在此填寫，非必填"
         :shadow-text="textareaShadowText"
         @keydown="processTextareaFill"
         @focus="processTextareaFill"
@@ -46,17 +46,17 @@ const router = useRouter()
 const user = useUserStore()
 const { addCart } = user
 
-const handlong = ref(0)
-const handlongRule = reactive([
-  v => v >= 1 || '尺寸錯誤'
-])
+// const format = ref(10)
+// const formatRule = reactive([
+//   v => v >= 1 || '尺寸錯誤'
+// ])
 
 const quantity = ref(0)
 const quantityRule = reactive([
   v => v >= 1 || '數量錯誤'
 ])
 
-const textareaModel = ref()
+const remark = ref('')
 
 const valid = ref(false)
 
@@ -72,7 +72,7 @@ const product = reactive({
 
 const submit = () => {
   if (valid.value) return
-  user.addCart({ product: product._id, quantity: quantity.value })
+  user.addCart({ product: product._id, quantity: quantity.value, remark: remark.value })
 }
 
 const init = async () => {

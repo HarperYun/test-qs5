@@ -4,18 +4,20 @@
     <h4>購物車</h4>
   </div>
   <q-table
+    :grid="$q.screen.lt.md"
     title="購物車商品"
     row-key="name"
     v-if='cart.length > 0'
+    :filter="filter"
     :rows="cart"
     :columns="orderColumns"
   >
-  <template v-slot:body-cell="props">
+  <!-- <template v-slot:body-cell="props">
     <q-td :props="props">
     <pre>{{ props }}</pre>
-      <!-- {{ props.value }} -->
+      {{ props.value }}
     </q-td>
-  </template>
+  </template> -->
   </q-table>
   <q-list v-else class="text-center">
     <p>沒有訂單</p>
@@ -41,10 +43,12 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import Swal from 'sweetalert2'
 import { apiAuth } from 'src/boot/axios'
 import { useUserStore } from 'src/stores/user'
+
+const filter = ref('')
 
 const user = useUserStore()
 
@@ -91,17 +95,11 @@ init()
 const orderColumns = reactive([
   {
     name: 'name',
+    align: 'left',
     required: true,
     label: '商品名稱',
     field: row => row.product.name,
     format: val => `${val}`,
-    sortable: true
-  },
-  {
-    name: 'size',
-    required: true,
-    label: '尺寸',
-    field: row => row.product.size,
     sortable: true
   },
   {
