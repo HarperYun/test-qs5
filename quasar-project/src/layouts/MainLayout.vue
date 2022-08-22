@@ -38,9 +38,10 @@ html {
           <q-btn v-if="!isLogin" to="/signup" outline color="amber-5" icon="login" label="註冊" />
           <q-btn v-if="!isLogin" to="/login" outline color="amber-5" icon="person" label="登入" />
           <q-btn v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" icon="person_outline" label="會員資料" />
-          <q-btn v-if="isLogin && !isAdmin" to="/lovelist" outline color="amber-5" icon="favorite" label="收藏清單" />
+          <!-- <q-btn v-if="isLogin && !isAdmin" to="/lovelist" outline color="amber-5" icon="favorite" label="收藏清單" /> -->
+          <q-btn v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" icon="fact_check" label="訂單紀錄" />
           <q-btn v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" icon="shopping_cart" label="購物車" >
-            <q-badge v-if="cart > 0" rounded floating transparent color="red" label="" />
+            <q-badge v-if="cart > 0" rounded floating transparent color="red" />
           </q-btn>
           <!-- <q-btn v-if="isLogin" to="/orderpage" outline color="amber-5" icon="article" label="訂單紀錄" /> -->
           <!-- <q-btn v-if="isLogin" to="" outline color="amber-5" icon="grade" label="評價紀錄" /> -->

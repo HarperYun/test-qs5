@@ -12,62 +12,54 @@
     <!-- 輪播圖 - 外接 -->
     <section-carousel/>
 
-    <!-- <div style="position: absolute; left: 50%; transform: translateX(-50%);">
-      <q-btn-group>
-        <q-btn to="/" class="bg-brown-9" outline color="amber-5" icon="flare" label="本季新品" />
-        <q-btn to="/" class="bg-brown-9" outline color="amber-5" icon="local_fire_department" label="人氣排行" />
-      </q-btn-group>
-    </div> -->
-
     <div class="q-pa-md" style="max-width: 100%">
-    <q-card>
-      <q-tabs
-        v-model="tab"
-        dense
-        class="text-brown-3 bg-amber-5"
-        active-color="brown-9"
-        indicator-color="brown-9"
-        align="justify"
-      >
-        <q-tab name="new" icon="flare" label="本季新品" />
-        <q-tab name="hot" icon="local_fire_department" label="人氣排行" />
-      </q-tabs>
+      <q-card >
+        <q-tabs
+          v-model="tab"
+          dense
+          class="text-brown-4 bg-amber-4"
+          active-color="amber-5"
+          active-bg-color="brown-9"
+          indicator-color="white"
+          align="justify"
+        >
+          <q-tab class="text-h5" style="height: 80px;" name="new" icon="flare" label="本季新品" />
+          <q-tab class="" style="height: 80px;" name="hot" icon="local_fire_department" label="人氣排行" />
+        </q-tabs>
 
-      <q-separator />
+        <q-separator />
 
-      <q-tab-panels v-model="tab" animated>
+        <q-tab-panels v-model="tab" animated >
 
-        <q-tab-panel name="new">
-          <div class="q-py-lg row items-start q-gutter-md justify-center" v-if='products.length > 0'>
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
-              <ProductCard :product="product" />
-              <!-- <div>{{index}} : {{product.name}} - {{product.category}}</div> -->
-            </q-card>
+          <q-tab-panel name="new">
+            <div class="q-py-lg row items-start q-gutter-md justify-center" v-if='products.length > 0'>
+              <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+                <ProductsCard :product="product" class="text-white bg-amber-2" />
+              </q-card>
 
-          </div>
+            </div>
 
-          <div v-else >
-            <p>沒有商品</p>
-          </div>
-        </q-tab-panel>
+            <div v-else >
+              <p>沒有商品</p>
+            </div>
+          </q-tab-panel>
 
-        <q-tab-panel name="hot">
-          <div class="q-pt-lg q-pb-lg row items-start q-gutter-md justify-center" v-if='products.length > 0'>
-            <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
-              <ProductCard :product="product" />
-              <!-- <div>{{index}} : {{product.name}} - {{product.category}}</div> -->
-            </q-card>
+          <q-tab-panel name="hot">
+            <div class="q-pt-lg q-pb-lg row items-start q-gutter-md justify-center" v-if='products.length > 0'>
+              <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+                <ProductsCard :product="product" />
+              </q-card>
 
-          </div>
+            </div>
 
-          <div v-else >
-            <p>沒有商品</p>
-          </div>
+            <div v-else >
+              <p>沒有商品</p>
+            </div>
 
-        </q-tab-panel>
-      </q-tab-panels>
-    </q-card>
-  </div>
+          </q-tab-panel>
+        </q-tab-panels>
+      </q-card>
+    </div>
 
   </q-page>
 </template>
@@ -87,7 +79,7 @@ import SectionCarousel from '../pages/indexpage/SectionCarousel.vue'
 import { ref, reactive } from 'vue'
 import Swal from 'sweetalert2'
 import { api } from 'src/boot/axios'
-import ProductCard from 'src/components/ProductsCard.vue'
+import ProductsCard from 'src/components/ProductsCard.vue'
 
 const tab = ref('new')
 // const innerTab = ref('innerMails')

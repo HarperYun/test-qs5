@@ -106,7 +106,7 @@ const routes = [
         path: 'product/:id',
         component: () => import('pages/indexpage/ProductOne.vue'),
         meta: {
-          title: 'XXX',
+          title: '商品',
           login: false,
           admin: false
         }
