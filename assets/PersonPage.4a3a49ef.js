@@ -1,1 +1,0 @@
-import{ar as t,t as s,as as r,d as e,x as n,av as c,F as o,A as a,at as d}from"./index.8b968dfc.js";const l={},_=a("div",{class:"window-width text-center"},[a("h4",null,"\u6703\u54E1\u8CC7\u6599")],-1);function i(f,u){return s(),r(o,null,[_,e(c,null,{default:n(()=>[e(d)]),_:1})],64)}var h=t(l,[["render",i]]);export{h as default};
