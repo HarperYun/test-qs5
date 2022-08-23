@@ -11,6 +11,7 @@
     :filter="filter"
     :rows="cart"
     :columns="orderColumns"
+    class="q-ma-xl q-pa-xl"
   >
   <!-- <template v-slot:body-cell="props">
     <q-td :props="props">
@@ -22,6 +23,7 @@
   <q-list v-else class="text-center">
     <p>沒有訂單</p>
   </q-list>
+  <q-btn class="bg-amber-5 text-brown-9" label="送出結帳"/>
   <!-- <div v-if='cart.length > 0' >
     <div class="q-pa-md" v-for='item in cart' :key='item._id' :class="{'bg-red': !item.product.sell}">
       <q-card>
