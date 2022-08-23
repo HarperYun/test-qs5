@@ -1,1 +1,0 @@
-import{ar as e,t,as as s,A as o}from"./index.9713ecfd.js";const c={},a={class:"window-width text-center"},n=o("h4",null,"\u95DC\u65BC\u6676\u7CF8",-1),r=[n];function _(d,i){return t(),s("div",a,r)}var f=e(c,[["render",_]]);export{f as default};
