@@ -129,6 +129,41 @@ export const useUserStore = defineStore({
         })
         return false
       }
+    },
+    // 結帳
+    async checkout () {
+      try {
+        await apiAuth.post('/orders')
+        // 結帳成功後購物車清空
+        this.cart = 0
+        Swal.fire({
+          icon: 'success',
+          title: '成功',
+          text: '結帳成功'
+        })
+        router.push('/orderpage')
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: '失敗',
+          text: '結帳失敗'
+        })
+      }
+    },
+    async getUser () {
+      if (this.token.length === 0) return
+      try {
+        const { data } = await apiAuth.get('/users')
+        this.account = data.result.account
+        this.role = data.result.role
+        this.cart = data.result.cart
+      } catch (error) {
+        this.logout()
+      }
     }
+  },
+  persist: {
+    key: 'vite-shop',
+    paths: ['token']
   }
 })

@@ -38,9 +38,9 @@
   <q-list v-else class="text-center">
     <p>沒有訂單</p>
   </q-list>
-  <q-list class="justify-center ">
-    <div>{{ totalPrice }}</div>
-    <q-btn class="bg-amber-5 text-brown-9" @click="user.checkout" :disabled='!canCheckout' label="送出結帳"/>
+  <q-list class="justify-center text-h5">
+    <div class="text-deep-orange-10 q-ma-md"><b>總共 ${{ totalPrice }}</b></div>
+    <q-btn class="bg-amber-13 text-brown-9 q-ma-lg" @click="user.checkout" :disabled='!canCheckout' ><b>送出結帳</b></q-btn>
   </q-list>
   <!-- <div v-if='cart.length > 0' >
     <div class="q-pa-md" v-for='(item, idx) in cart' :key='item._id' :class="{'bg-red': !item.product.sell}">
