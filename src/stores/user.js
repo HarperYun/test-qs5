@@ -1,11 +1,10 @@
 import { defineStore } from 'pinia'
 import { api, apiAuth } from 'boot/axios.js'
 import Swal from 'sweetalert2'
-import router from 'src/router'
 
 export const useUserStore = defineStore({
   id: 'user',
-  state () {
+  state() {
     return {
       token: '',
       account: '',
@@ -14,21 +13,21 @@ export const useUserStore = defineStore({
     }
   },
   getters: {
-    isLogin () {
+    isLogin() {
       return this.token.length !== 0
     },
     // 是否管理員
-    isAdmin () {
+    isAdmin() {
       return this.role === 1
     },
     // 隨機大頭貼，用帳號作為變化
-    avatar () {
+    avatar() {
       return 'https://source.boringavatars.com/beam/120/' + this.account
     }
   },
   // 寫登入功能
   actions: {
-    async login (form) {
+    async login(form) {
       try {
         const { data } = await api.post('/users/login', form)
         this.token = data.result.token
@@ -51,7 +50,7 @@ export const useUserStore = defineStore({
         })
       }
     },
-    async logout () {
+    async logout() {
       try {
         // 請求帶jwt的話要用以下的寫法
         // 因為已經在 axios 裡面設定過簡潔寫法，因此可刪掉原本的一串，直接引入
@@ -83,14 +82,14 @@ export const useUserStore = defineStore({
       this.cart = 0
     },
     // 加入購物車
-    async addCart (data) {
+    async addCart(data) {
       if (this.token.length === 0) {
         Swal.fire({
           icon: 'error',
           title: '失敗',
           text: '請先登入'
         })
-        router.push('/login')
+        this.router.push('/login')
         return
       }
       if (data.amount <= 0) {
@@ -117,7 +116,7 @@ export const useUserStore = defineStore({
         })
       }
     },
-    async updateCart (data) {
+    async updateCart(data) {
       try {
         await apiAuth.patch('/users/cart', data)
         return true
@@ -131,7 +130,7 @@ export const useUserStore = defineStore({
       }
     },
     // 結帳
-    async checkout () {
+    async checkout() {
       try {
         await apiAuth.post('/orders')
         // 結帳成功後購物車清空
@@ -141,8 +140,9 @@ export const useUserStore = defineStore({
           title: '成功',
           text: '結帳成功'
         })
-        router.push('/orderpage')
+        this.router.push('/orderpage')
       } catch (error) {
+        console.log(error)
         Swal.fire({
           icon: 'error',
           title: '失敗',
@@ -150,7 +150,7 @@ export const useUserStore = defineStore({
         })
       }
     },
-    async getUser () {
+    async getUser() {
       if (this.token.length === 0) return
       try {
         const { data } = await apiAuth.get('/users')

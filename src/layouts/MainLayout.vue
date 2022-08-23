@@ -16,7 +16,7 @@ html {
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-btn-group flat>
-          <q-btn to="/" class="text-amber-5 text-h6" ><b>晶 ✧ 糸</b></q-btn>
+          <q-btn to="/" class="text-amber-5 text-h6"><b>晶 ✧ 糸</b></q-btn>
           <!-- <q-btn to="/insㄋtructionspage" outline color="amber-5" label="使用說明" /> -->
         </q-btn-group>
 
@@ -32,15 +32,17 @@ html {
         </q-toolbar-title> -->
 
         <q-btn-group outline>
-          <q-btn v-if="isLogin && isAdmin" to="/admin" outline color="amber-5" icon="admin_panel_settings" label="後台管理" />
+          <q-btn v-if="isLogin && isAdmin" to="/admin" outline color="amber-5" icon="admin_panel_settings"
+            label="後台管理" />
           <q-btn v-if="isLogin && !isAdmin" to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" />
           <!-- <q-btn v-if="isLogin && !isAdmin" to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" /> -->
           <q-btn v-if="!isLogin" to="/signup" outline color="amber-5" icon="login" label="註冊" />
           <q-btn v-if="!isLogin" to="/login" outline color="amber-5" icon="person" label="登入" />
-          <q-btn v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" icon="person_outline" label="會員資料" />
+          <q-btn v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" icon="person_outline"
+            label="會員資料" />
           <!-- <q-btn v-if="isLogin && !isAdmin" to="/lovelist" outline color="amber-5" icon="favorite" label="收藏清單" /> -->
-          <q-btn v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" icon="fact_check" label="訂單紀錄" />
-          <q-btn v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" icon="shopping_cart" label="購物車" >
+          <!-- <q-btn v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" icon="fact_check" label="訂單紀錄" /> -->
+          <q-btn v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" icon="shopping_cart" label="購物車">
             <q-badge v-if="cart > 0" rounded floating transparent color="red" />
           </q-btn>
           <!-- <q-btn v-if="isLogin" to="/orderpage" outline color="amber-5" icon="article" label="訂單紀錄" /> -->

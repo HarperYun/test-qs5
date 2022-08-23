@@ -1,7 +1,7 @@
-import router from '.'
+// import router from '.'
 // import MainLayoutVue from 'layouts/MainLayout.vue'
 // import IndexPageVue from 'pages/IndexPage.vue'
-import { useUserStore } from 'src/stores/user'
+// import { useUserStore } from 'src/stores/user'
 
 const routes = [
 
