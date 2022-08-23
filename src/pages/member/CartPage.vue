@@ -3,32 +3,24 @@
   <div class="window-width text-center">
     <h4>購物車</h4>
   </div>
-  <q-table
-    :grid="$q.screen.lt.md"
-    title="購物車商品"
-    row-key="name"
-    v-if='cart.length > 0'
-    :filter="filter"
-    :rows="cart"
-    :columns="orderColumns"
-    class="q-ma-xl q-pa-xl justify-center"
-  >
-    <q-tr v-for='item in cart' :key='item._id' ></q-tr>
+  <q-table :grid="$q.screen.lt.md" title="購物車商品" row-key="name" v-if='cart.length > 0' :filter="filter" :rows="cart"
+    :columns="orderColumns" class="q-ma-xl q-pa-xl justify-center">
+    <q-tr v-for='item in cart' :key='item._id'></q-tr>
 
-  <!-- <template v-slot:body-cell="props">
+    <!-- <template v-slot:body-cell="props">
     <q-td :props="props">
     <pre>{{ props }}</pre>
       {{ props.value }}
     </q-td>
   </template> -->
 
-  <template v-slot:body-cell-todo="props">
-    <q-td :props="props">
-      <q-btn class="bg-negative text-amber-1" @click="updateCart(idx, 0)" >刪除</q-btn>
-    </q-td>
-  </template>
+    <template v-slot:body-cell-todo="props">
+      <q-td :props="props">
+        <q-btn class="bg-negative text-amber-1" @click="updateCart(idx, 0)">刪除</q-btn>
+      </q-td>
+    </template>
 
-  <!-- <template>
+    <!-- <template>
     <q-td>
       <div>{{ totalPrice }}</div>
     </q-td>
@@ -39,8 +31,8 @@
     <p>沒有訂單</p>
   </q-list>
   <q-list class="justify-center text-h5">
-    <div class="text-deep-orange-10 q-ma-md"><b>總共 ${{ totalPrice }}</b></div>
-    <q-btn class="bg-amber-13 text-brown-9 q-ma-lg" @click="user.checkout" :disabled='!canCheckout' ><b>送出結帳</b></q-btn>
+    <div class="text-deep-orange-10 q-ma-md"><b>總金額 ${{ totalPrice }}</b></div>
+    <q-btn class="bg-amber-13 text-brown-9 q-ma-lg" @click="user.checkout" :disabled='!canCheckout'><b>送出結帳</b></q-btn>
   </q-list>
   <!-- <div v-if='cart.length > 0' >
     <div class="q-pa-md" v-for='(item, idx) in cart' :key='item._id' :class="{'bg-red': !item.product.sell}">
