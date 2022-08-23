@@ -116,6 +116,19 @@ export const useUserStore = defineStore({
           text: '加入購物車失敗'
         })
       }
+    },
+    async updateCart (data) {
+      try {
+        await apiAuth.patch('/users/cart', data)
+        return true
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: '失敗',
+          text: '更新購物車失敗'
+        })
+        return false
+      }
     }
   }
 })

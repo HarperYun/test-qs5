@@ -11,21 +11,39 @@
     :filter="filter"
     :rows="cart"
     :columns="orderColumns"
-    class="q-ma-xl q-pa-xl"
+    class="q-ma-xl q-pa-xl justify-center"
   >
+    <q-tr v-for='item in cart' :key='item._id' ></q-tr>
+
   <!-- <template v-slot:body-cell="props">
     <q-td :props="props">
     <pre>{{ props }}</pre>
       {{ props.value }}
     </q-td>
   </template> -->
+
+  <template v-slot:body-cell-todo="props">
+    <q-td :props="props">
+      <q-btn class="bg-negative text-amber-1" @click="updateCart(idx, 0)" >刪除</q-btn>
+    </q-td>
+  </template>
+
+  <!-- <template>
+    <q-td>
+      <div>{{ totalPrice }}</div>
+    </q-td>
+  </template> -->
+
   </q-table>
   <q-list v-else class="text-center">
     <p>沒有訂單</p>
   </q-list>
-  <q-btn class="bg-amber-5 text-brown-9" label="送出結帳"/>
+  <q-list class="justify-center ">
+    <div>{{ totalPrice }}</div>
+    <q-btn class="bg-amber-5 text-brown-9" @click="user.checkout" :disabled='!canCheckout' label="送出結帳"/>
+  </q-list>
   <!-- <div v-if='cart.length > 0' >
-    <div class="q-pa-md" v-for='item in cart' :key='item._id' :class="{'bg-red': !item.product.sell}">
+    <div class="q-pa-md" v-for='(item, idx) in cart' :key='item._id' :class="{'bg-red': !item.product.sell}">
       <q-card>
         <div>名稱：{{ item.product.name }}</div>
         <div>單價：{{ item.product.price }}</div>
@@ -93,6 +111,8 @@ const init = async () => {
 }
 init()
 
+// https://youtu.be/hTJx17BlXxg?t=19787
+// 寫購物車
 // ---------------------------------------table----------------------------------------------------
 const orderColumns = reactive([
   {
@@ -115,21 +135,26 @@ const orderColumns = reactive([
     name: 'quantity',
     required: true,
     label: '數量',
-    field: row => row.price
+    field: row => row.quantity
   },
   {
     name: 'subtotal',
     required: true,
     label: '小計',
-    field: row => '123'
+    field: row => row.quantity * row.product.price
+  },
+  {
+    name: 'remark',
+    required: true,
+    label: '備註',
+    field: row => row.remark
   },
   {
     name: 'todo',
     required: true,
     label: '操作',
-    field: row => '123',
-    sortable: true,
-    sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
+    sortable: true
+    // sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
   }
 ])
 
@@ -143,4 +168,5 @@ const orderColumns = reactive([
 //     todo: '6%'
 //   }
 // ]
+
 </script>

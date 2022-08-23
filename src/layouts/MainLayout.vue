@@ -34,7 +34,7 @@ html {
         <q-btn-group outline>
           <q-btn v-if="isLogin && isAdmin" to="/admin" outline color="amber-5" icon="admin_panel_settings" label="後台管理" />
           <q-btn v-if="isLogin && !isAdmin" to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" />
-          <q-btn v-if="isLogin && !isAdmin" to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" />
+          <!-- <q-btn v-if="isLogin && !isAdmin" to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" /> -->
           <q-btn v-if="!isLogin" to="/signup" outline color="amber-5" icon="login" label="註冊" />
           <q-btn v-if="!isLogin" to="/login" outline color="amber-5" icon="person" label="登入" />
           <q-btn v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" icon="person_outline" label="會員資料" />
