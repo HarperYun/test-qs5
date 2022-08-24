@@ -1,0 +1,1 @@
+import{ar as t,Y as s,as as n,a2 as e}from"./index.e5a82d34.js";const o={},c={class:"window-width text-center"},a=e("h5",null,[e("b",null,"\u5F8C\u53F0\u7BA1\u7406")],-1),_=e("h6",null,"\u8ACB\u9078\u64C7\u7BA1\u7406\u9805\u76EE",-1),r=[a,_];function d(i,l){return s(),n("div",c,r)}var f=t(o,[["render",d]]);export{f as default};
