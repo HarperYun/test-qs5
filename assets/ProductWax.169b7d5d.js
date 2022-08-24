@@ -1,1 +1,0 @@
-import{ar as e,Y as s,as as t,a2 as a,d as r,ax as c,F as o}from"./index.e4df7827.js";const n={},d=a("h5",{class:"text-center"},[a("b",null,"\u881F\u7DDA\u7DE8\u7E69")],-1),_={class:"q-pa-md row items-start q-gutter-md"};function l(m,i){return s(),t(o,null,[d,a("div",_,[r(c,{class:"my-card"})])],64)}var f=e(n,[["render",l]]);export{f as default};
