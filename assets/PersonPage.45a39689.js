@@ -1,0 +1,1 @@
+import{ar as t,Y as s,as as r,d as a,_ as n,ax as c,F as o,a2 as e,ay as l}from"./index.e4df7827.js";const d={},_=e("div",{class:"window-width text-center"},[e("h5",null,[e("b",null,"\u6703\u54E1\u8CC7\u6599")])],-1);function i(u,f){return s(),r(o,null,[_,a(c,null,{default:n(()=>[a(l)]),_:1})],64)}var h=t(d,[["render",i]]);export{h as default};
