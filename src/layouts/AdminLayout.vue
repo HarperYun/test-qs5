@@ -7,7 +7,7 @@
     <q-header reveal class="bg-blue-grey-10 text-teal-2" height-hint="98">
       <q-toolbar>
         <!-- 左側抽屜按鈕 -->
-        <q-btn dense flat round icon="menu" class="blue-grey-13" @click="toggleLeftDrawer" />
+        <!-- <q-btn dense flat round icon="menu" class="blue-grey-13" @click="toggleLeftDrawer" /> -->
 
         <q-btn-group outline>
           <q-btn to="/" outline color="teal-2" icon="home" label="首頁" />
@@ -19,6 +19,9 @@
 
         <q-btn-group outline>
           <!-- <q-btn to="/admin" outline color="teal-2" icon="admin_panel_settings" label="後台管理"  /> -->
+          <q-btn to="/admin/memberspage" outline color="teal-2" icon="restaurant" label="會員管理"  />
+          <q-btn to="/admin/productspage" outline color="teal-2" icon="local_cafe" label="商品管理"  />
+          <q-btn to="/admin/orderspage" outline color="teal-2" icon="ramen_dining" label="訂單管理"  />
           <q-btn outline color="teal-2" icon="logout" @click="logout" label="登出" />
         </q-btn-group>
 
@@ -26,7 +29,7 @@
     </q-header>
 
     <!-- 左側抽屜內容 -->
-    <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered elevated show-if-above>
+    <!-- <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered elevated show-if-above>
 
       <div class="q-pa-md" style="max-width: 350px">
         <q-list bordered>
@@ -57,7 +60,7 @@
         </q-list>
       </div>
 
-    </q-drawer>
+    </q-drawer> -->
 
     <q-page-container>
       <router-view />

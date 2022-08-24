@@ -1,7 +1,7 @@
 <!-- 聯絡我們 -->
 <template>
   <div class="window-width text-center">
-    <h4>聯絡我們</h4>
+    <h5><b>聯絡我們</b></h5>
   </div>
 
   <div class="q-pa-md row items-start q-gutter-md justify-center">

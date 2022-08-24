@@ -1,38 +1,61 @@
 <!-- 購物車頁面 -->
 <template>
   <div class="window-width text-center">
-    <h4>購物車</h4>
+    <h5><b>購物車</b></h5>
   </div>
-  <q-table :grid="$q.screen.lt.md" title="購物車商品" row-key="name" v-if='cart.length > 0' :filter="filter" :rows="cart"
-    :columns="orderColumns" class="q-ma-xl q-pa-xl justify-center">
-    <q-tr v-for='item in cart' :key='item._id'></q-tr>
+  <!-- <q-table :grid="$q.screen.lt.md" title="購物車商品" row-key="name" v-if='cart.length > 0' :filter="filter" :rows="cart" :columns="orderColumns" class="q-ma-xl q-pa-xl justify-center" >
+  <pre>{{ cart }}</pre> -->
+    <!-- <q-tr v-for='item in cart' :key='item._id'></q-tr> -->
 
     <!-- <template v-slot:body-cell="props">
-    <q-td :props="props">
-    <pre>{{ props }}</pre>
+      <q-td :props="props">
+        <pre>{{ props }}</pre>
       {{ props.value }}
     </q-td>
   </template> -->
 
-    <template v-slot:body-cell-todo="props">
-      <q-td :props="props">
+    <!-- <template #body-cell-todo="props">
+        <pre>{{ props }}</pre>
+      <q-td >
         <q-btn class="bg-negative text-amber-1" @click="updateCart(idx, 0)">刪除</q-btn>
       </q-td>
-    </template>
+    </template> -->
 
-    <!-- <template>
-    <q-td>
-      <div>{{ totalPrice }}</div>
-    </q-td>
-  </template> -->
+  <!-- </q-table> -->
 
-  </q-table>
+  <q-table
+      title="Treats"
+      :rows="cart"
+      :columns="orderColumns"
+      row-key="name"
+      v-if="cart.length > 0 "
+    >
+      <!-- <template v-slot:header-cell-calories="props">
+        <q-th :props="props">
+          <q-icon name="thumb_up" size="1.5em" />
+          {{ props.col.label }}
+        </q-th>
+      </template> -->
+
+      <template #body-cell-todo="props">
+        <!-- <pre>{{props}}</pre> -->
+        <q-td :props="props">
+          <q-btn :idx="props.rowIndex" class="bg-red-10 text-red-1" label="刪除" @click="updateCart(props.rowIndex, 0)" />
+        </q-td>
+      </template>
+
+    </q-table>
   <q-list v-else class="text-center">
     <p>沒有訂單</p>
   </q-list>
-  <q-list class="justify-center text-h5">
-    <div class="text-deep-orange-10 q-ma-md"><b>總金額 ${{ totalPrice }}</b></div>
-    <q-btn class="bg-amber-13 text-brown-9 q-ma-lg" @click="user.checkout" :disabled='!canCheckout'><b>送出結帳</b></q-btn>
+  <q-list class="text-h5">
+    <div class="text-deep-orange-10 q-ma-xl text-right"><b>總金額 ${{ totalPrice }}</b></div>
+  </q-list>
+
+  <q-separator />
+
+  <q-list class="row reverse ">
+    <q-btn class="bg-amber-13 text-deep-orange-10 q-ma-xl" :size="xl" @click="user.checkout" :disabled='!canCheckout'><b>送出結帳</b></q-btn>
   </q-list>
   <!-- <div v-if='cart.length > 0' >
     <div class="q-pa-md" v-for='(item, idx) in cart' :key='item._id' :class="{'bg-red': !item.product.sell}">
@@ -77,13 +100,14 @@ const canCheckout = computed(() => {
   })
 })
 
-const updateCart = async (idx, quantity) => {
-  const result = await user.updateCart({ product: cart[idx].product._id, quantity })
+const updateCart = async (rowIndex, quantity) => {
+  console.log(rowIndex, quantity)
+  const result = await user.updateCart({ product: cart[rowIndex].product._id, quantity })
   if (result) {
     if (quantity === 0) {
-      cart.splice(idx, 1)
+      cart.splice(rowIndex, 1)
     } else {
-      cart[idx].quantity = quantity
+      cart[rowIndex].quantity = quantity
     }
   }
 }
@@ -92,7 +116,7 @@ const init = async () => {
   try {
     const { data } = await apiAuth.get('/users/cart')
     cart.push(...data.result)
-    console.log(cart)
+    // console.log(cart)
   } catch (error) {
     Swal.fire({
       icon: 'error',

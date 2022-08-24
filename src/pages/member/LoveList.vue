@@ -2,6 +2,6 @@
 <!-- 暫時先不做 -->
 <template>
   <div class="window-width text-center">
-    <h4>收藏清單</h4>
+    <h5><b>收藏清單</b></h5>
   </div>
 </template>

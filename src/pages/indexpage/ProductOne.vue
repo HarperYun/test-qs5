@@ -12,7 +12,7 @@
       <div class="text-h5 text-left q-pl-lg q-pb-md">${{ product.price }}</div>
       <div class="text-left q-pl-lg q-pb-sm" style="white-space: pre;">{{ product.description }}</div>
       <!-- <q-input class="q-ma-md" filled type="number" v-model="format" :rules='formatRule' label="手腕圍 （請取整數）" /> -->
-      <q-input class="q-ma-md" filled type="number" v-model="quantity" :rules='quantityRule' label="數量" />
+      <q-input class="q-ma-md" filled type="number" v-model.number="quantity" :rules='quantityRule' label="數量" />
       <q-input
         class="q-ma-md"
         v-model="remark"

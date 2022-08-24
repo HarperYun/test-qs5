@@ -6,8 +6,8 @@
       <q-card-section class="text-center">
         <h6><b>登入帳號</b></h6>
       </q-card-section>
-
-      <q-form @submit="login" @reset="reset" class="q-gutter-md">
+<!-- @reset="reset" -->
+      <q-form @submit="login"  class="q-gutter-md">
         <q-card-section>
           <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account"/>
           <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password"/>

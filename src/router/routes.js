@@ -110,6 +110,56 @@ const routes = [
           login: false,
           admin: false
         }
+      },
+      {
+        // 全部商品頁面
+        path: 'allproducts',
+        component: () => import('pages/AllProducts.vue'),
+        meta: {
+          title: '全部商品',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        // 天然石分類
+        path: 'productstone',
+        component: () => import('pages/ProductStone.vue'),
+        meta: {
+          title: '天然石',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        // 蠟線分類
+        path: 'productwax',
+        component: () => import('pages/ProductWax.vue'),
+        meta: {
+          title: '蠟線',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        // 布品分類
+        path: 'productcloth',
+        component: () => import('pages/ProductCloth.vue'),
+        meta: {
+          title: '布品',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        // 棉麻編織分類
+        path: 'productweave',
+        component: () => import('pages/ProductWeave.vue'),
+        meta: {
+          title: '棉麻編織',
+          login: false,
+          admin: false
+        }
       }
     ]
   },

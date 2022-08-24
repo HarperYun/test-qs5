@@ -41,11 +41,10 @@ html {
           <q-btn v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" icon="person_outline"
             label="會員資料" />
           <!-- <q-btn v-if="isLogin && !isAdmin" to="/lovelist" outline color="amber-5" icon="favorite" label="收藏清單" /> -->
-          <!-- <q-btn v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" icon="fact_check" label="訂單紀錄" /> -->
+          <q-btn v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" icon="fact_check" label="訂單紀錄" />
           <q-btn v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" icon="shopping_cart" label="購物車">
             <q-badge v-if="cart > 0" rounded floating transparent color="red" />
           </q-btn>
-          <!-- <q-btn v-if="isLogin" to="/orderpage" outline color="amber-5" icon="article" label="訂單紀錄" /> -->
           <!-- <q-btn v-if="isLogin" to="" outline color="amber-5" icon="grade" label="評價紀錄" /> -->
           <q-btn v-if="isLogin" outline color="amber-5" icon="logout" @click="logout" label="登出" />
         </q-btn-group>
@@ -59,44 +58,44 @@ html {
 
       <div class="q-pa-md" style="max-width: 350px">
         <q-list bordered>
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="/allproducts">
             <q-item-section avatar>
               <q-icon color="brown-9" name="piano" />
             </q-item-section>
 
-            <q-item-section>0. 全部商品</q-item-section>
+            <q-item-section>全部商品</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="/productstone">
             <q-item-section avatar>
               <q-icon color="brown-9" name="brightness_low" />
             </q-item-section>
 
-            <q-item-section>1. 天然石手鍊</q-item-section>
+            <q-item-section>天然石手鍊</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="productwax">
             <q-item-section avatar>
               <q-icon color="brown-9" name="spa" />
             </q-item-section>
 
-            <q-item-section>2. 蠟線編繩</q-item-section>
+            <q-item-section>蠟線編繩</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="productcloth">
             <q-item-section avatar>
               <q-icon color="brown-9" name="filter_vintage" />
             </q-item-section>
 
-            <q-item-section>3. 布品手作</q-item-section>
+            <q-item-section>布品手作</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="productweave">
             <q-item-section avatar>
               <q-icon color="brown-9" name="cruelty_free" />
             </q-item-section>
 
-            <q-item-section>4. 棉麻編織</q-item-section>
+            <q-item-section>棉麻編織</q-item-section>
           </q-item>
 
         </q-list>
