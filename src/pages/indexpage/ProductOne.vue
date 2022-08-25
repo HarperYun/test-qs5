@@ -1,31 +1,22 @@
 <!-- 個別商品頁面 -->
 <template>
 
-  <q-form  class="row no-wrap justify-evenly text-center q-pa-xl q-ma-xl " v-model="valid" @submit.prevent="submit" >
+  <q-form class="row no-wrap justify-evenly text-center q-pa-xl q-ma-xl " v-model="valid" @submit.prevent="submit"
+    style="max-width: 70vw; margin: auto;">
 
-    <q-card class="col-7">
-      <q-img :src='product.image'/>
+    <q-card class="col-6">
+      <q-img :src='product.image' />
     </q-card>
 
-    <q-card class="col-5">
+    <q-card class="col-6">
       <div class="text-h5 text-left q-pa-lg">{{ product.name }}</div>
       <div class="text-h6 text-left q-pl-lg q-pb-md">${{ product.price }}</div>
       <div class="text-left q-pl-lg q-pb-sm" style="white-space: pre;">{{ product.description }}</div>
       <!-- <q-input class="q-ma-md" filled type="number" v-model="format" :rules='formatRule' label="手腕圍 （請取整數）" /> -->
       <q-input class="q-ma-md" filled type="number" v-model.number="quantity" :rules='quantityRule' label="數量" />
-      <q-input
-        class="q-ma-md"
-        v-model="remark"
-        filled
-        clearable
-        type="textarea"
-        color="red-12"
-        label="備註"
-        hint="客製化長度及其他需求請在此填寫，非必填"
-        :shadow-text="textareaShadowText"
-        @keydown="processTextareaFill"
-        @focus="processTextareaFill"
-      />
+      <q-input class="q-ma-md" v-model="remark" filled clearable type="textarea" color="red-12" label="備註"
+        hint="客製化尺寸、長度及其他需求請在此填寫。" :shadow-text="textareaShadowText" @keydown="processTextareaFill"
+        @focus="processTextareaFill" />
       <q-btn class="q-ma-lg" color="brown-9" icon="add_circle" type="submit" label="加入購物車" />
     </q-card>
   </q-form>
