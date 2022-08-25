@@ -5,6 +5,13 @@ html {
   background-color: rgb(255, 251, 237);
   /* background-color: rgb(236, 246, 249); */
 }
+
+@media(max-width: 767px){
+  .slogen {
+    display: none;
+  }
+}
+
 </style>
 
 <template>
@@ -16,8 +23,8 @@ html {
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-btn-group flat>
-          <q-btn to="/" class="text-amber-5 text-h6"><b>晶 ✧ 糸</b></q-btn>
-          <!-- <q-btn to="/insㄋtructionspage" outline color="amber-5" label="使用說明" /> -->
+          <q-btn to="/" class="text-amber-5 text-h6 "><b>晶 ✧ 糸</b></q-btn>
+          <div class="text-overline slogen">晶糸原創 ｜ 手作生活</div>
         </q-btn-group>
 
         <div class="col text-center text-weight-bold">
@@ -34,7 +41,7 @@ html {
         <q-btn-group outline>
           <q-btn v-if="isLogin && isAdmin" to="/admin" outline color="amber-5" icon="admin_panel_settings"
             label="後台管理" />
-          <q-btn v-if="isLogin && !isAdmin" to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" />
+          <!-- <q-btn v-if="isLogin && !isAdmin" to="/aboutpage" outline color="amber-5" icon="auto_awesome" label="關於晶糸" /> -->
           <!-- <q-btn v-if="isLogin && !isAdmin" to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" /> -->
           <q-btn v-if="!isLogin" to="/signup" outline color="amber-5" icon="login" label="註冊" />
           <q-btn v-if="!isLogin" to="/login" outline color="amber-5" icon="person" label="登入" />
@@ -96,6 +103,25 @@ html {
             </q-item-section>
 
             <q-item-section>棉麻編織</q-item-section>
+          </q-item>
+
+        </q-list>
+
+        <q-list bordered>
+          <q-item clickable v-ripple to="/aboutpage">
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="bakery_dining" />
+            </q-item-section>
+
+            <q-item-section>關於晶糸</q-item-section>
+          </q-item>
+
+          <q-item clickable v-ripple to="/contactus">
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="email" />
+            </q-item-section>
+
+            <q-item-section>聯絡我們</q-item-section>
           </q-item>
 
         </q-list>

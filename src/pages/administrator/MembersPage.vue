@@ -11,13 +11,17 @@
       <q-item-section>會員ID</q-item-section>
       <q-item-section>會員信箱</q-item-section>
       <q-item-section>會員帳號</q-item-section>
-      <q-item-section>操作</q-item-section>
+      <q-item-section class="text-right">操作</q-item-section>
     </q-item>
 
     <q-item clickable v-ripple class="q-ma-none" v-for='user in users' :key='user._id'>
       <q-item-section>{{ user._id }}</q-item-section>
       <q-item-section>{{ user.email }}</q-item-section>
       <q-item-section>{{ user.account }}</q-item-section>
+      <q-item-section>
+        <q-btn class="bg-red-10 text-red-1 self-end" label="刪除"/>
+      </q-item-section>
+
     </q-item>
 
   </q-list>

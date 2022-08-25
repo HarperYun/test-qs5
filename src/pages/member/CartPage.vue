@@ -44,7 +44,7 @@
         </q-td>
       </template>
 
-    </q-table>
+  </q-table>
   <q-list v-else class="text-center">
     <p>沒有訂單</p>
   </q-list>
