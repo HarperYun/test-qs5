@@ -1,1 +1,0 @@
-import{ar as t,Y as s,as as o,a2 as e}from"./index.14e03b38.js";const a={},c={class:"window-width text-center"},n=e("h5",null,[e("b",null,"\u95DC\u65BC\u6676\u7CF8")],-1),r=[n];function _(d,i){return s(),o("div",c,r)}var f=t(a,[["render",_]]);export{f as default};
