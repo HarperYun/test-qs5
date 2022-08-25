@@ -1,12 +1,10 @@
-<!-- <style>
-    html {
-      background: black;
-    }
-</style> -->
+<style>
+
+</style>
 
 <template>
 
-  <div class="q-pa-md row q-gutter-md window-hight window-width justify-center">
+  <div class="q-pa-md row q-gutter-md window-hight window-width justify-center" style="margin: auto;">
     <q-card class="my-card text-brown-9" style="width: 400px; background-color: rgb(255, 251, 237); border:12px solid #F2C037; border-radius: 15px;">
 
       <q-card-section class="text-center">

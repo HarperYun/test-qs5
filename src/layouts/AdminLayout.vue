@@ -1,8 +1,9 @@
 <!-- 底色 blue-grey-10 字色 teal-2 -->
 <!-- col-xs-6 col-sm-4 col-md-3 -->
+<!-- style="background: rgb(236, 246, 249);" -->
 
 <template>
-  <q-layout view="hHh lpR fFf" style="background: rgb(236, 246, 249);">
+  <q-layout view="hHh lpR fFf" >
 
     <q-header reveal class="bg-blue-grey-10 text-teal-2" height-hint="98">
       <q-toolbar>

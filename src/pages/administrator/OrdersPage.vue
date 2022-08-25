@@ -4,7 +4,7 @@
     <h5>訂單管理</h5>
   </div>
 
-  <q-list separator bordered class="q-pa-xs q-ma-none" style="max-width: 100vw;" v-if='orders.length > 0'>
+  <q-list separator bordered class="q-pa-xs q-ma-none" style="width: 90vw; margin: auto;" v-if='orders.length > 0'>
 
     <q-item>
       <q-item-section >訂單ID</q-item-section>
@@ -12,6 +12,7 @@
       <q-item-section >合計</q-item-section>
       <q-item-section >下單帳號</q-item-section>
       <q-item-section >訂單內容</q-item-section>
+      <!-- <q-item-section class="text-right">操作</q-item-section> -->
     </q-item>
 
     <q-item clickable v-ripple class="q-ma-none" v-for='order in orders' :key='order._id'>
@@ -19,9 +20,14 @@
       <q-item-section >{{ new Date(order.date).toLocaleDateString() }}</q-item-section>
       <q-item-section >$ {{ order.totalPrice }}</q-item-section>
       <q-item-section >{{ order.user.account }}</q-item-section>
-      <q-item-section v-for='product in order.products' :key='product._id' >
-        {{ product.product.name }} x {{ product.quantity }} （{{ product.remark }}）
+      <q-item-section >
+        <div v-for='product in order.products' :key='product._id' >
+          {{ product.product.name }} x {{ product.quantity }} （{{ product.remark }}）
+        </div>
       </q-item-section>
+      <!-- <q-item-section>
+        <q-btn class="bg-red-10 text-red-1 self-end" icon="delete" label="刪除"/>
+      </q-item-section> -->
     </q-item>
 
   </q-list>
@@ -39,6 +45,7 @@ import Swal from 'sweetalert2'
 
 const orders = reactive([])
 
+// 取得訂單
 const init = async () => {
   try {
     const { data } = await apiAuth.get('/orders/all')
@@ -54,7 +61,7 @@ const init = async () => {
     Swal.fire({
       icon: 'error',
       title: '失敗',
-      text: '無法取得訂單1'
+      text: '無法取得訂單'
     })
   }
 }

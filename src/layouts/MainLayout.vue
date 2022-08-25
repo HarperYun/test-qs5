@@ -24,7 +24,7 @@ html {
 
         <q-btn-group flat>
           <q-btn to="/" class="text-amber-5 text-h6 "><b>晶 ✧ 糸</b></q-btn>
-          <div class="text-overline slogen">晶糸原創 ｜ 手作生活</div>
+          <p class="text-overline slogen">晶糸原創 ｜ 手作生活</p>
         </q-btn-group>
 
         <div class="col text-center text-weight-bold">
@@ -133,7 +133,7 @@ html {
         <q-toolbar-title>
           <q-avatar>
           </q-avatar>
-          <div> A </div>
+          <div class="text-h6"> 本網站僅作為課堂專題使用 </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

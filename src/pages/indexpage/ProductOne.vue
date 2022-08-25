@@ -1,15 +1,15 @@
 <!-- 個別商品頁面 -->
 <template>
 
-  <q-form class="row no-wrap justify-evenly text-center q-pa-xl q-ma-xl " v-model="valid" @submit.prevent="submit" >
+  <q-form  class="row no-wrap justify-evenly text-center q-pa-xl q-ma-xl " v-model="valid" @submit.prevent="submit" >
 
     <q-card class="col-7">
       <q-img :src='product.image'/>
     </q-card>
 
     <q-card class="col-5">
-      <div class="text-h3 text-left q-pa-lg">{{ product.name }}</div>
-      <div class="text-h5 text-left q-pl-lg q-pb-md">${{ product.price }}</div>
+      <div class="text-h5 text-left q-pa-lg">{{ product.name }}</div>
+      <div class="text-h6 text-left q-pl-lg q-pb-md">${{ product.price }}</div>
       <div class="text-left q-pl-lg q-pb-sm" style="white-space: pre;">{{ product.description }}</div>
       <!-- <q-input class="q-ma-md" filled type="number" v-model="format" :rules='formatRule' label="手腕圍 （請取整數）" /> -->
       <q-input class="q-ma-md" filled type="number" v-model.number="quantity" :rules='quantityRule' label="數量" />

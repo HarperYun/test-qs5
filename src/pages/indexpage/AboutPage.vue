@@ -1,4 +1,4 @@
-<!-- 關於 -->
+<!-- 關於晶糸 -->
 <template>
   <div class="window-width text-center">
     <h5><b>關於晶糸</b></h5>

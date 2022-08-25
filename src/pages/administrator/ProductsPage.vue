@@ -1,11 +1,17 @@
-<!-- 商品管理 -->
+<!-- 後台商品管理 -->
+<style>
+body {
+  overflow-x: hidden;
+}
+</style>
+
 <template>
   <div class="window-width text-center">
     <h5>商品管理</h5>
   </div>
 
-  <div class="q-ma-md">
-    <q-btn color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)" label="新增商品" />
+  <div class="q-ma-md ">
+    <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)" label="新增商品" />
   </div>
 
   <div>
@@ -91,15 +97,15 @@
   </div>
 
 <!-- ----------------------------------------------------------------------------------------- -->
-  <q-list class="q-pa-xs q-ma-none" style="max-width: 80vw;" bordered v-if='products.length > 0' >
+  <q-list separator class="q-pa-xs q-ma-none" style="width: 80vw; margin: auto;" bordered v-if='products.length > 0' >
 
     <q-item clickable v-ripple class="q-ma-none" v-for='(product, idx) in products' :key='product._id'>
       <q-item-section avatar >
-        <img :src='product.image'>
+        <img style="max-width: 10vw;" :src='product.image'>
       </q-item-section>
       <q-item-section >{{ product.name }}</q-item-section>
       <q-item-section class="q-pa-sm q-gutter-sm justify-end">
-        <q-btn class="bg-green-10 text-white" style="" @click="openDialog(product._id, idx)" icon='border_color' label="編輯" />
+        <q-btn class="bg-green-10 text-white self-end" style="" @click="openDialog(product._id, idx)" icon='border_color' label="編輯" />
       </q-item-section>
     </q-item>
 

@@ -1,4 +1,5 @@
 <!-- <section-carousel/> -->
+<!-- 首頁輪播圖 -->
 <template>
 <div class="q-pa-md text-white" >
   <div class="q-gutter-md" >

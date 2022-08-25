@@ -12,7 +12,7 @@
     <!-- 輪播圖 - 外接 -->
     <section-carousel/>
 
-    <div class="q-pa-md" style="max-width: 100%">
+    <div class="q-pa-md" style="width: 85%; margin: auto;">
       <q-card >
         <q-tabs
           v-model="tab"
@@ -23,8 +23,8 @@
           indicator-color="white"
           align="justify"
         >
-          <q-tab class="text-h5" style="height: 80px;" name="new" icon="flare" label="本季新品" />
-          <q-tab class="" style="height: 80px;" name="hot" icon="local_fire_department" label="人氣排行" />
+          <q-tab class="text-h5 text-overline" style="height: 80px;" name="new" icon="flare" label="本季新品" />
+          <q-tab class="text-h5 text-overline" style="height: 80px;" name="hot" icon="local_fire_department" label="人氣排行" />
         </q-tabs>
 
         <q-separator />
@@ -32,9 +32,9 @@
         <q-tab-panels v-model="tab" animated >
 
           <q-tab-panel name="new">
-            <div class="q-py-lg row items-start q-gutter-md justify-center" v-if='products.length > 0'>
-              <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
-                <ProductsCard :product="product" class="text-white bg-amber-2" />
+            <div class="q-py-lg row items-start q-gutter-md justify-center " v-if='products.length > 0'>
+              <q-card style="max-width: 16vw;" class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+                <ProductsCard :product="product" class="text-white bg-amber-2 " />
               </q-card>
 
             </div>
@@ -46,7 +46,7 @@
 
           <q-tab-panel name="hot">
             <div class="q-pt-lg q-pb-lg row items-start q-gutter-md justify-center" v-if='products.length > 0'>
-              <q-card class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+              <q-card style="max-width: 16vw;" class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
                 <ProductsCard :product="product" />
               </q-card>
 

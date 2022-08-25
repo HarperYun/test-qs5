@@ -1,4 +1,4 @@
-<!-- 購物車頁面 -->
+<!-- 使用者的購物車頁面 -->
 <template>
   <div class="window-width text-center">
     <h5><b>購物車</b></h5>
@@ -24,11 +24,12 @@
   <!-- </q-table> -->
 
   <q-table
-      title="Treats"
+      title=" "
       :rows="cart"
       :columns="orderColumns"
       row-key="name"
       v-if="cart.length > 0 "
+      style="width: 80vw; margin: auto; border-radius: 15px 15px 0px 0px;"
     >
       <!-- <template v-slot:header-cell-calories="props">
         <q-th :props="props">
@@ -48,14 +49,14 @@
   <q-list v-else class="text-center">
     <p>沒有訂單</p>
   </q-list>
-  <q-list class="text-h5">
+  <q-list class="text-h5 q-mr-xl q-pr-lg">
     <div class="text-deep-orange-10 q-ma-xl text-right"><b>總金額 ${{ totalPrice }}</b></div>
   </q-list>
 
   <q-separator />
 
-  <q-list class="row reverse ">
-    <q-btn class="bg-amber-13 text-deep-orange-10 q-ma-xl" :size="xl" @click="user.checkout" :disabled='!canCheckout'><b>送出結帳</b></q-btn>
+  <q-list class="row reverse q-mr-xl q-pr-lg">
+    <q-btn class="bg-brown-9 text-amber-5 q-ma-xl text-h6" style="width: 20vw; height: 5vh;" @click="user.checkout" :disabled='!canCheckout'><b>送出結帳</b></q-btn>
   </q-list>
   <!-- <div v-if='cart.length > 0' >
     <div class="q-pa-md" v-for='(item, idx) in cart' :key='item._id' :class="{'bg-red': !item.product.sell}">
@@ -173,16 +174,5 @@ const orderColumns = reactive([
     // sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
   }
 ])
-
-// const products = [
-//   {
-//     name: 'A',
-//     size: 2,
-//     price: 3,
-//     quantity: 4,
-//     subtotal: 5,
-//     todo: '6%'
-//   }
-// ]
 
 </script>
