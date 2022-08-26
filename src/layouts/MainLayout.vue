@@ -133,7 +133,7 @@ html {
         <q-toolbar-title>
           <q-avatar>
           </q-avatar>
-          <div class="text-h6"> 本網站僅作為課堂專題使用 </div>
+          <div class="text-h6"> A </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

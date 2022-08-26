@@ -1,4 +1,19 @@
 <!-- IndexPage = 首頁 -->
+<style>
+
+@media(min-width: 767px){
+  .productname {
+    font-size: 15px;
+  }
+}
+
+@media(min-width: 992px){
+  .productname {
+    font-size: 16px;
+  }
+}
+</style>
+
 <template>
 <!-- QPageContainer底下的第一個頁面 一定要用QPage -->
   <q-page>
@@ -31,10 +46,11 @@
 
         <q-tab-panels v-model="tab" animated >
 
+<!--  col-xs-12 col-sm-4 col-md-3 -->
           <q-tab-panel name="new">
-            <div class="q-py-lg row items-start q-gutter-md justify-center " v-if='products.length > 0'>
-              <q-card style="max-width: 16vw;" class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
-                <ProductsCard :product="product" class="text-white bg-amber-2 " />
+            <div class="q-py-lg row items-start q-gutter-md q-ma-sm justify-center" v-if='products.length > 0'>
+              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+                <ProductsCard :product="product" class="text-white bg-amber-2" />
               </q-card>
 
             </div>
@@ -45,9 +61,9 @@
           </q-tab-panel>
 
           <q-tab-panel name="hot">
-            <div class="q-pt-lg q-pb-lg row items-start q-gutter-md justify-center" v-if='products.length > 0'>
-              <q-card style="max-width: 16vw;" class="my-card q-ma-md col-xs-6 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
-                <ProductsCard :product="product" />
+            <div class="q-py-lg row items-start q-gutter-md q-ma-sm justify-center" v-if='products.length > 0'>
+              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+                <ProductsCard :product="product" class="text-white bg-amber-2 " />
               </q-card>
 
             </div>

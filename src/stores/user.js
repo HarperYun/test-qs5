@@ -68,7 +68,6 @@ export const useUserStore = defineStore({
           text: '已登出'
         })
       } catch (err) {
-        console.log(err)
         Swal.fire({
           icon: 'success',
           title: '成功',

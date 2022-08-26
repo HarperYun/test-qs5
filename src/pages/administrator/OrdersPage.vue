@@ -1,10 +1,15 @@
 <!-- 後台訂單管理 -->
+<style>
+body {
+  overflow-x: hidden;
+}
+</style>
 <template>
   <div class="window-width text-center">
-    <h5>訂單管理</h5>
+    <h5><b>訂單管理</b></h5>
   </div>
 
-  <q-list separator bordered class="q-pa-xs q-ma-none" style="width: 90vw; margin: auto;" v-if='orders.length > 0'>
+  <q-list separator bordered class="q-pa-xs q-ma-none" style="width: 80vw; margin: auto;" v-if='orders.length > 0'>
 
     <q-item>
       <q-item-section >訂單ID</q-item-section>
@@ -22,7 +27,7 @@
       <q-item-section >{{ order.user.account }}</q-item-section>
       <q-item-section >
         <div v-for='product in order.products' :key='product._id' >
-          {{ product.product.name }} x {{ product.quantity }} （{{ product.remark }}）
+          ➤ {{ product.product.name }} x {{ product.quantity }} （{{ product.remark }}）
         </div>
       </q-item-section>
       <!-- <q-item-section>

@@ -1,7 +1,12 @@
 <!-- 後台會員管理 -->
+<style>
+body {
+  overflow-x: hidden;
+}
+</style>
 <template>
   <div class="window-width text-center">
-    <h5>會員管理</h5>
+    <h5><b>會員管理</b></h5>
   </div>
 
   <q-list separator bordered class="q-pa-xs q-ma-none" style="width: 80vw; margin: auto;" v-if='users.length > 0'>
@@ -14,7 +19,7 @@
       <q-item-section class="text-right">操作</q-item-section>
     </q-item>
 
-    <q-item clickable v-ripple class="q-ma-none" v-for='user in users' :key='user._id'>
+    <q-item clickable class="q-ma-none" v-for='user in users' :key='user._id'>
       <q-item-section>{{ user._id }}</q-item-section>
       <!-- <pre>{{user}}</pre> -->
       <q-item-section>{{ user.email }}</q-item-section>

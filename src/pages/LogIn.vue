@@ -1,7 +1,16 @@
+<style>
+.cardcenter {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+</style>
 <template>
 
   <div class="q-pa-md row q-gutter-md window-hight window-width justify-center">
-    <q-card class="my-card text-brown-9" style="width: 400px; background-color: rgb(255, 251, 237); border:12px solid #F2C037; border-radius: 15px;">
+    <q-card class="my-card text-brown-9 cardcenter" style="width: 400px; background-color: rgb(255, 251, 237); border:2px solid #F2C037; border-radius: 15px;">
 
       <q-card-section class="text-center">
         <h6><b>登入帳號</b></h6>

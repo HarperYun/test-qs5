@@ -7,7 +7,7 @@ body {
 
 <template>
   <div class="window-width text-center">
-    <h5>商品管理</h5>
+    <h5><b>商品管理</b></h5>
   </div>
 
   <div class="q-ma-md ">
@@ -115,6 +115,10 @@ body {
     <p>沒有商品</p>
   </q-list>
 
+  <div class="q-ma-md ">
+    <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)" label="新增商品" />
+  </div>
+
 <!-- ----------------------------------------------------------------------------------------- -->
 
 </template>
@@ -150,7 +154,7 @@ const rules = reactive({
     return v > -1 || '必須大於等於 0'
   },
   size (v) {
-    return !v || !v.length || (v[0]?.type?.includes('image') && v[0]?.size < 1024 * 1024) || '檔案超過1 MB 或 檔案格式不符'
+    return !v || !v.length || (v[0]?.type?.includes('image') && v[0]?.size < 2048 * 2048) || '檔案超過4 MB 或 檔案格式不符'
   }
 })
 

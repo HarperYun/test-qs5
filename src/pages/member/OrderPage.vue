@@ -20,7 +20,7 @@
       <q-item-section >$ {{ order.totalPrice }}</q-item-section>
       <q-item-section >
         <div v-for='product in order.products' :key='product._id' >
-          {{ product.product.name }} x {{ product.quantity }} （{{ product.remark }}）
+          ➤ {{ product.product.name }} x {{ product.quantity }} （{{ product.remark }}）
         </div>
       </q-item-section>
     </q-item>
