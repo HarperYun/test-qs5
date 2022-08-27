@@ -6,12 +6,21 @@ html {
   /* background-color: rgb(236, 246, 249); */
 }
 
-@media(max-width: 767px){
+/* 考慮要不要加 */
+.footer {
+  display: none;
+}
+
+@media(min-width: 767px) {
   .slogen {
     display: none;
   }
-}
 
+  /* 考慮要不要加 */
+  .footer {
+    display: block;
+  }
+}
 </style>
 
 <template>
@@ -128,7 +137,7 @@ html {
       </div>
     </q-drawer>
 
-    <q-footer bordered class="bg-brown-9 text-amber-5 text-center">
+    <q-footer bordered class="bg-brown-9 text-amber-5 text-center footer">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>

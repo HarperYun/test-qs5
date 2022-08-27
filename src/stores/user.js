@@ -8,6 +8,7 @@ export const useUserStore = defineStore({
     return {
       token: '',
       account: '',
+      email: '',
       role: 0,
       cart: 0
     }
@@ -22,7 +23,7 @@ export const useUserStore = defineStore({
     },
     // 隨機大頭貼，用帳號作為變化
     avatar() {
-      return 'https://source.boringavatars.com/beam/120/' + this.account
+      return 'https://source.boringavatars.com/beam/200/' + this.account + '?colors=dae5ab,e9a385,fa154b,87313f,604e48'
     }
   },
   // 寫登入功能
@@ -32,6 +33,7 @@ export const useUserStore = defineStore({
         const { data } = await api.post('/users/login', form)
         this.token = data.result.token
         this.account = data.result.account
+        this.email = data.result.email
         this.role = data.result.role
         this.cart = data.result.cart
         Swal.fire({
