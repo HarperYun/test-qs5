@@ -11,7 +11,8 @@ body {
   </div>
 
   <div class="q-ma-md ">
-    <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)" label="新增商品" />
+    <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)"
+      label="新增商品" />
   </div>
 
   <div>
@@ -27,65 +28,36 @@ body {
             <q-card-section>
               <div class="row justify-center">
                 <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-                  <q-input
-                  filled
-                  v-model="form.name"
-                  :rules="[rules.required]"
-                  label="名稱"
-                  />
+                  <q-input filled v-model="form.name" :rules="[rules.required]" label="名稱" />
                 </div>
                 <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-                  <q-input
-                  filled
-                  type="number"
-                  :rules="[rules.required, rules.price]"
-                  v-model="form.price"
-                  label="價格"
-                  />
+                  <q-input filled type="number" :rules="[rules.required, rules.price]" v-model="form.price"
+                    label="價格" />
                 </div>
                 <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-                  <q-select
-                  filled
-                  :options="categories"
-                  :rules="[rules.required]"
-                  v-model='form.category'
-                  label="分類"
-                  />
+                  <q-select filled :options="categories" :rules="[rules.required]" v-model='form.category' label="分類" />
                 </div>
                 <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-                  <q-checkbox
-                  v-model='form.sell'
-                  label="是否上架"  />
+                  <q-checkbox v-model='form.sell' label="是否上架" />
                 </div>
                 <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
                   <div class="row items-start">
-                    <q-file
-                    v-model="form.image"
-                    label="上傳圖片"
-                    accept="image/*"
-                    filled
-                    counter
-                    multiple
-                    max-files="6"
-                    style="max-width: 300px"
-                    :rules="[rules.size]"
-                    />
+                    <q-file v-model="form.image" label="上傳圖片" accept="image/*" filled counter multiple max-files="6"
+                      style="max-width: 300px" :rules="[rules.size]" />
                   </div>
                 </div>
                 <div class="col-xs-12 q-ma-sm q-gutter-md" style="max-width: 300px">
-                  <q-input
-                  filled type="textarea"
-                  v-model="form.description"
-                  label="商品描述"
-                  />
+                  <q-input filled type="textarea" v-model="form.description" label="商品描述" />
                 </div>
               </div>
 
             </q-card-section>
 
             <q-card-actions align="center" class="q-mb-md">
-              <q-btn class="bg-blue-grey-10 text-white" type="submit" :loading="form.submitting" label="確定" v-close-popup />
-              <q-btn class="bg-white text-blue-grey-10" :disabled='form.submitting' @click='form.dialog = false' label="取消" v-close-popup />
+              <q-btn class="bg-blue-grey-10 text-white" type="submit" :loading="form.submitting" label="確定"
+                v-close-popup />
+              <q-btn class="bg-white text-blue-grey-10" :disabled='form.submitting' @click='form.dialog = false'
+                label="取消" v-close-popup />
             </q-card-actions>
 
           </q-card>
@@ -96,16 +68,17 @@ body {
 
   </div>
 
-<!-- ----------------------------------------------------------------------------------------- -->
-  <q-list separator class="q-pa-xs q-ma-none" style="width: 80vw; margin: auto;" bordered v-if='products.length > 0' >
+  <!-- ----------------------------------------------------------------------------------------- -->
+  <q-list separator class="q-pa-xs q-ma-none" style="width: 80vw; margin: auto;" bordered v-if='products.length > 0'>
 
     <q-item clickable v-ripple class="q-ma-none" v-for='(product, idx) in products' :key='product._id'>
-      <q-item-section avatar >
+      <q-item-section avatar>
         <img style="max-width: 10vw;" :src='product.image'>
       </q-item-section>
-      <q-item-section >{{ product.name }}</q-item-section>
+      <q-item-section>{{ product.name }}</q-item-section>
       <q-item-section class="q-pa-sm q-gutter-sm justify-end">
-        <q-btn class="bg-green-10 text-white self-end" style="" @click="openDialog(product._id, idx)" icon='border_color' label="編輯" />
+        <q-btn class="bg-green-10 text-white self-end" style="" @click="openDialog(product._id, idx)"
+          icon='border_color' label="編輯" />
       </q-item-section>
     </q-item>
 
@@ -116,10 +89,11 @@ body {
   </q-list>
 
   <div class="q-ma-md ">
-    <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)" label="新增商品" />
+    <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)"
+      label="新增商品" />
   </div>
 
-<!-- ----------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------- -->
 
 </template>
 
@@ -147,13 +121,13 @@ const form = reactive({
 
 // 用規則分類的規則
 const rules = reactive({
-  required (v) {
+  required(v) {
     return !!v || '必填'
   },
-  price (v) {
+  price(v) {
     return v > -1 || '必須大於等於 0'
   },
-  size (v) {
+  size(v) {
     return !v || !v.length || (v[0]?.type?.includes('image') && v[0]?.size < 2048 * 2048) || '檔案超過4 MB 或 檔案格式不符'
   }
 })
@@ -181,12 +155,11 @@ const openDialog = (_id, idx) => {
 }
 
 const submitForm = async () => {
-  console.log(123)
   if (form.valid) return
   form.submitting = true
-  console.log(456)
 
   const fd = new FormData()
+
   for (const key in form) {
     if (['_id', 'idx', 'dialog', 'valid', 'submitting'].includes(key)) continue
     else if (key === 'image') fd.append(key, form[key][0])
@@ -214,7 +187,7 @@ const submitForm = async () => {
     form.dialog = false
   } catch (error) {
     Swal.fire({
-      icon: 'success',
+      icon: 'error',
       title: '失敗',
       text: error.isAxiosError ? error.response.data.message : error.message
     })

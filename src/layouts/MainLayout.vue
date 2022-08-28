@@ -10,10 +10,41 @@ html {
   margin: auto;
 }
 
+.slogen {
+  display: none;
+}
+
+.rwdmain {
+  display: none;
+}
+
 @media(min-width: 767px) {
   .slogen {
     display: none;
   }
+
+  .rwdmain {
+    display: block;
+  }
+
+  .rwdmd {
+    display: none;
+  }
+}
+
+@media(min-width: 992px) {
+  .slogen {
+    display: block;
+  }
+
+  .rwdmain {
+    display: block;
+  }
+
+  .rwdmd {
+    display: none;
+  }
+
 }
 </style>
 
@@ -48,15 +79,17 @@ html {
           <!-- <q-btn v-if="isLogin && !isAdmin" to="/contactus" outline color="amber-5" icon="mail_outline" label="聯絡我們" /> -->
           <q-btn v-if="!isLogin" to="/signup" outline color="amber-5" icon="login" label="註冊" />
           <q-btn v-if="!isLogin" to="/login" outline color="amber-5" icon="person" label="登入" />
-          <q-btn v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" icon="person_outline"
-            label="會員資料" />
+          <q-btn class="rwdmain" v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5"
+            icon="person_outline" label="會員資料" />
           <!-- <q-btn v-if="isLogin && !isAdmin" to="/lovelist" outline color="amber-5" icon="favorite" label="收藏清單" /> -->
-          <q-btn v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" icon="fact_check" label="訂單紀錄" />
-          <q-btn v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" icon="shopping_cart" label="購物車">
+          <q-btn class="rwdmain" v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" icon="fact_check"
+            label="訂單紀錄" />
+          <q-btn class="rwdmain" v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" icon="shopping_cart"
+            label="購物車">
             <q-badge v-if="cart > 0" rounded floating transparent color="red" />
           </q-btn>
           <!-- <q-btn v-if="isLogin" to="" outline color="amber-5" icon="grade" label="評價紀錄" /> -->
-          <q-btn v-if="isLogin" outline color="amber-5" icon="logout" @click="logout" label="登出" />
+          <q-btn class="rwdmain" v-if="isLogin" outline color="amber-5" icon="logout" @click="logout" label="登出" />
         </q-btn-group>
 
       </q-toolbar>
@@ -128,6 +161,45 @@ html {
           </q-item>
 
         </q-list>
+
+        <q-list bordered>
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5"
+            icon="person_outline">
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="bakery_dining" />
+            </q-item-section>
+
+            <q-item-section>會員資料</q-item-section>
+          </q-item>
+
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5"
+            icon="fact_check">
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="email" />
+            </q-item-section>
+
+            <q-item-section>訂單紀錄</q-item-section>
+          </q-item>
+
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5"
+            icon="shopping_cart">
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="email" />
+            </q-item-section>
+
+            <q-item-section>購物車</q-item-section>
+          </q-item>
+
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin" outline color="amber-5" icon="logout" @click="logout">
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="email" />
+            </q-item-section>
+
+            <q-item-section>登出</q-item-section>
+          </q-item>
+
+        </q-list>
+
       </div>
     </q-drawer>
 

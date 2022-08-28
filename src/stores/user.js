@@ -10,6 +10,7 @@ export const useUserStore = defineStore({
       account: '',
       email: '',
       phonenumber: '',
+      address: '',
       role: 0,
       cart: 0
     }
@@ -36,6 +37,8 @@ export const useUserStore = defineStore({
         this.token = data.result.token
         this.account = data.result.account
         this.email = data.result.email
+        this.phonenumber = data.result.phonenumber
+        this.address = data.result.address
         this.role = data.result.role
         this.cart = data.result.cart
         Swal.fire({
