@@ -1,0 +1,1 @@
+import{ar as t,U as s,as as n,_ as e}from"./index.59abb544.js";const o={},c={class:"window-width text-center"},_=e("h5",null,[e("b",null,"\u5F8C\u53F0\u7BA1\u7406")],-1),a=e("h6",null,"\u8ACB\u9078\u64C7\u7BA1\u7406\u9805\u76EE",-1),r=[_,a];function d(i,l){return s(),n("div",c,r)}var f=t(o,[["render",d]]);export{f as default};
