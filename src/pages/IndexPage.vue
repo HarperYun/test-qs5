@@ -1,13 +1,12 @@
 <!-- IndexPage = 首頁 -->
 <style>
-
-@media(min-width: 767px){
+@media(min-width: 767px) {
   .productname {
     font-size: 15px;
   }
 }
 
-@media(min-width: 992px){
+@media(min-width: 992px) {
   .productname {
     font-size: 16px;
   }
@@ -15,9 +14,9 @@
 </style>
 
 <template>
-<!-- QPageContainer底下的第一個頁面 一定要用QPage -->
+  <!-- QPageContainer底下的第一個頁面 一定要用QPage -->
   <q-page>
-  <!-- <q-page class="flex flex-center"> -->
+    <!-- <q-page class="flex flex-center"> -->
     <!-- <img
       alt="JM logo"
       src="../img/JM_logo.svg"
@@ -25,50 +24,46 @@
     > -->
 
     <!-- 輪播圖 - 外接 -->
-    <section-carousel/>
+    <section-carousel />
 
     <div class="q-pa-md" style="width: 85%; margin: auto;">
-      <q-card >
-        <q-tabs
-          v-model="tab"
-          dense
-          class="text-brown-4 bg-amber-4"
-          active-color="amber-5"
-          active-bg-color="brown-9"
-          indicator-color="white"
-          align="justify"
-        >
+      <q-card>
+        <q-tabs v-model="tab" dense class="text-brown-4 bg-amber-4" active-color="amber-5" active-bg-color="brown-9"
+          indicator-color="white" align="justify">
           <q-tab class="text-h5 text-overline" style="height: 80px;" name="new" icon="flare" label="本季新品" />
-          <q-tab class="text-h5 text-overline" style="height: 80px;" name="hot" icon="local_fire_department" label="人氣排行" />
+          <q-tab class="text-h5 text-overline" style="height: 80px;" name="hot" icon="local_fire_department"
+            label="人氣排行" />
         </q-tabs>
 
         <q-separator />
 
-        <q-tab-panels v-model="tab" animated >
+        <q-tab-panels v-model="tab" animated>
 
-<!--  col-xs-12 col-sm-4 col-md-3 -->
+          <!--  col-xs-12 col-sm-4 col-md-3 -->
           <q-tab-panel name="new">
             <div class="q-py-lg row items-start q-gutter-md q-ma-sm justify-center" v-if='products.length > 0'>
-              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products"
+                :key='product._id'>
                 <ProductsCard :product="product" class="text-white bg-amber-2" />
               </q-card>
 
             </div>
 
-            <div v-else >
+            <div v-else>
               <p>沒有商品</p>
             </div>
           </q-tab-panel>
 
           <q-tab-panel name="hot">
             <div class="q-py-lg row items-start q-gutter-md q-ma-sm justify-center" v-if='products.length > 0'>
-              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products" :key='product._id'>
+              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products"
+                :key='product._id'>
                 <ProductsCard :product="product" class="text-white bg-amber-2 " />
               </q-card>
 
             </div>
 
-            <div v-else >
+            <div v-else>
               <p>沒有商品</p>
             </div>
 

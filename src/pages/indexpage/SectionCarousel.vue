@@ -31,7 +31,7 @@
           <div class="absolute-bottom custom-caption imgpA">
             <div class="text-h6 text-center "><b>新 會 員 註 冊</b></div>
             <div class="text-h6 text-center"><b>享 100 元 購 物 金</b></div>
-            <q-btn to="/signup" class="text-weight-bold text-h5 text-center bg-amber-5 text-brown-9 cabtn">馬上註冊</q-btn>
+            <q-btn to="/signup" class="text-weight-bold text-h5 text-center bg-amber-2 text-brown-9 cabtn">馬上註冊</q-btn>
           </div>
         </q-carousel-slide>
 

@@ -14,18 +14,21 @@ body {
     <q-item>
       <!-- <q-item-section>頭像</q-item-section> -->
       <q-item-section>會員ID</q-item-section>
-      <q-item-section>會員信箱</q-item-section>
       <q-item-section>會員帳號</q-item-section>
+      <q-item-section>會員信箱</q-item-section>
+      <q-item-section>會員手機號碼</q-item-section>
       <q-item-section class="text-right">操作</q-item-section>
     </q-item>
 
     <q-item clickable class="q-ma-none" v-for='user in users' :key='user._id'>
       <q-item-section>{{ user._id }}</q-item-section>
       <!-- <pre>{{user}}</pre> -->
-      <q-item-section>{{ user.email }}</q-item-section>
       <q-item-section>{{ user.account }}</q-item-section>
+      <q-item-section>{{ user.email }}</q-item-section>
+      <q-item-section>{{ user.phonenumber }}</q-item-section>
       <q-item-section>
-        <q-btn :key='user._id' class="bg-red-10 text-red-1 self-end" icon="delete" @click="deleteUser(user._id)" label="刪除"/>
+        <q-btn :key='user._id' class="bg-red-10 text-red-1 self-end" icon="delete" @click="deleteUser(user._id)"
+          label="刪除" />
       </q-item-section>
 
     </q-item>
@@ -46,7 +49,7 @@ import Swal from 'sweetalert2'
 const users = reactive([])
 
 // 刪除
-const deleteUser = async(userId) => {
+const deleteUser = async (userId) => {
   console.log(userId)
   try {
     await apiAuth.delete('/users/' + userId)

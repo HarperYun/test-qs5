@@ -6,19 +6,13 @@ html {
   /* background-color: rgb(236, 246, 249); */
 }
 
-/* 考慮要不要加 */
 .footer {
-  display: none;
+  margin: auto;
 }
 
 @media(min-width: 767px) {
   .slogen {
     display: none;
-  }
-
-  /* 考慮要不要加 */
-  .footer {
-    display: block;
   }
 }
 </style>
@@ -142,7 +136,7 @@ html {
         <q-toolbar-title>
           <q-avatar>
           </q-avatar>
-          <div class="text-h6"> A </div>
+          <div class="text-h6 q-mb-lg"> 本網站僅為專題作品使用 </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

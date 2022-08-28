@@ -9,11 +9,13 @@ export const useUserStore = defineStore({
       token: '',
       account: '',
       email: '',
+      phonenumber: '',
       role: 0,
       cart: 0
     }
   },
   getters: {
+    // 是否登入
     isLogin() {
       return this.token.length !== 0
     },
