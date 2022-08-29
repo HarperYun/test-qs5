@@ -1,0 +1,1 @@
+import{ao as t,U as o,ap as s,_ as e}from"./index.3afda9b4.js";const n={},c={class:"window-width text-center"},_=e("h5",null,[e("b",null,"\u5F8C\u53F0\u7BA1\u7406")],-1),a=e("h6",null,"\u8ACB\u9078\u64C7\u7BA1\u7406\u9805\u76EE",-1),r=[_,a];function d(i,l){return o(),s("div",c,r)}var f=t(n,[["render",d]]);export{f as default};
