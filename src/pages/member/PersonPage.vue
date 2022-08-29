@@ -13,7 +13,7 @@
 }
 
 .personalinformation {
-  width: 35vw;
+  width: 30vw;
   margin: auto;
 }
 
@@ -27,12 +27,11 @@
 }
 
 .updatebtn {
-  width: 30%;
+  width: 43%;
   height: 5vh;
   font-weight: bold;
   font-size: 20px;
 }
-
 </style>
 
 <template>
@@ -46,19 +45,29 @@
       <q-avatar class="avatar q-mt-lg">
         <img :src="avatar">
       </q-avatar>
-      <q-card-section class="personalinformation text-left q-mt-lg"><span class="textspan">會員帳號：</span>{{ user.account }}</q-card-section>
-      <q-card-section class="personalinformation text-left"><span class="textspan">會員信箱：</span>{{ user.email }}</q-card-section>
-      <q-card-section class="personalinformation text-left">
-        <p><span class="textspan">手機號碼：</span>{{ newdata.phonenumber }}</p>
-        <q-input v-if="opedEditNum" v-model="newdata.phonenumber" label="請輸入手機號碼" />
-        <q-btn v-if="opedEditNum" class="bg-amber-5 text-brown-9 self-end" @click="opedEditNum = !opedEditNum" label="確認" />
-        <q-btn v-if="!opedEditNum" class="bg-brown-6 text-white self-end" @click="opedEditNum = !opedEditNum" label="編輯" />
+      <q-card-section class="personalinformation q-px-xl text-left q-mt-lg">
+        <span class="textspan">會員帳號：</span>{{  user.account  }}
       </q-card-section>
-      <q-card-section class="personalinformation text-left">
-        <p><span class="textspan">收件地址：</span>{{ newdata.address }}</p>
+      <q-card-section class="personalinformation q-px-xl text-left">
+        <span class="textspan">會員信箱：</span>{{  user.email  }}
+      </q-card-section>
+      <q-card-section class="personalinformation q-px-xl text-left">
+        <p>
+          <span class="textspan">手機號碼：</span>{{  newdata.phonenumber  }}
+        </p>
+        <q-input v-if="opedEditNum" v-model="newdata.phonenumber" label="請輸入手機號碼" />
+        <q-btn v-if="opedEditNum" class="bg-amber-5 text-brown-9 self-end" @click="opedEditNum = !opedEditNum"
+          label="確認" />
+        <q-btn v-if="!opedEditNum" class="bg-brown-6 text-white self-end" @click="opedEditNum = !opedEditNum"
+          label="編輯" />
+      </q-card-section>
+      <q-card-section class="personalinformation q-px-xl text-left">
+        <p><span class="textspan">收件地址：</span>{{  newdata.address  }}</p>
         <q-input v-if="opedEditAdd" v-model="newdata.address" label="請輸入收件地址" />
-        <q-btn v-if="opedEditAdd" class="bg-amber-5 text-brown-9 self-end" @click="opedEditAdd = !opedEditAdd" label="確認" />
-        <q-btn v-if="!opedEditAdd" class="bg-brown-6 text-white self-end" @click="opedEditAdd = !opedEditAdd" label="編輯" />
+        <q-btn v-if="opedEditAdd" class="bg-amber-5 text-brown-9 self-end" @click="opedEditAdd = !opedEditAdd"
+          label="確認" />
+        <q-btn v-if="!opedEditAdd" class="bg-brown-6 text-white self-end" @click="opedEditAdd = !opedEditAdd"
+          label="編輯" />
       </q-card-section>
 
       <q-btn class="bg-amber-5 text-brown-9 updatebtn q-ma-lg q-mt-xl" type="submit" label="更 新" />

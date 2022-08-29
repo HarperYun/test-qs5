@@ -144,7 +144,7 @@ html {
         </q-list>
 
         <q-list bordered>
-          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" >
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5">
             <q-item-section avatar>
               <q-icon color="brown-9" name="person_outline" />
             </q-item-section>
@@ -152,7 +152,7 @@ html {
             <q-item-section>會員資料</q-item-section>
           </q-item>
 
-          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" >
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5">
             <q-item-section avatar>
               <q-icon color="brown-9" name="fact_check" />
             </q-item-section>
@@ -160,7 +160,7 @@ html {
             <q-item-section>訂單紀錄</q-item-section>
           </q-item>
 
-          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" >
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5">
             <q-item-section avatar>
               <q-icon color="brown-9" name="shopping_cart" />
             </q-item-section>
@@ -187,13 +187,13 @@ html {
             <q-item-section>關於晶糸</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="/contactus">
+          <!-- <q-item clickable v-ripple to="/contactus">
             <q-item-section avatar>
               <q-icon color="brown-9" name="email" />
             </q-item-section>
 
             <q-item-section>聯絡我們</q-item-section>
-          </q-item>
+          </q-item> -->
 
         </q-list>
 
