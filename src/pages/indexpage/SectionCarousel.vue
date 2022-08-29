@@ -21,7 +21,7 @@
 </style>
 
 <template>
-  <div class="q-pa-md text-amber-2">
+  <div class="text-amber-2">
     <div class="q-gutter-md">
       <!-- navigation => 控制紐(圓點) -->
       <q-carousel arrows animated infinite height="500px" v-model="slide" :autoplay="autoplay"

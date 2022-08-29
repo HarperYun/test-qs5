@@ -1,5 +1,9 @@
 <!-- 關於晶糸 -->
 <style>
+body {
+  overflow-x: hidden;
+}
+
 .aboutcard {
   width: 55vw;
   margin: auto;
