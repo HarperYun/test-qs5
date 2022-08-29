@@ -6,8 +6,8 @@ html {
   /* background-color: rgb(236, 246, 249); */
 }
 
-.footer {
-  margin: auto;
+.footerword {
+  padding: 1%;
 }
 
 .slogen {
@@ -144,6 +144,41 @@ html {
         </q-list>
 
         <q-list bordered>
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5" >
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="person_outline" />
+            </q-item-section>
+
+            <q-item-section>會員資料</q-item-section>
+          </q-item>
+
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5" >
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="fact_check" />
+            </q-item-section>
+
+            <q-item-section>訂單紀錄</q-item-section>
+          </q-item>
+
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5" >
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="shopping_cart" />
+            </q-item-section>
+
+            <q-item-section>購物車</q-item-section>
+          </q-item>
+
+          <q-item class="rwdmd" clickable v-ripple v-if="isLogin" outline color="amber-5" @click="logout">
+            <q-item-section avatar>
+              <q-icon color="brown-9" name="logout" />
+            </q-item-section>
+
+            <q-item-section>登出</q-item-section>
+          </q-item>
+
+        </q-list>
+
+        <q-list bordered>
           <q-item clickable v-ripple to="/aboutpage">
             <q-item-section avatar>
               <q-icon color="brown-9" name="bakery_dining" />
@@ -162,53 +197,13 @@ html {
 
         </q-list>
 
-        <q-list bordered>
-          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/personpage" outline color="amber-5"
-            icon="person_outline">
-            <q-item-section avatar>
-              <q-icon color="brown-9" name="bakery_dining" />
-            </q-item-section>
-
-            <q-item-section>會員資料</q-item-section>
-          </q-item>
-
-          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/orderpage" outline color="amber-5"
-            icon="fact_check">
-            <q-item-section avatar>
-              <q-icon color="brown-9" name="email" />
-            </q-item-section>
-
-            <q-item-section>訂單紀錄</q-item-section>
-          </q-item>
-
-          <q-item class="rwdmd" clickable v-ripple v-if="isLogin && !isAdmin" to="/cartpage" outline color="amber-5"
-            icon="shopping_cart">
-            <q-item-section avatar>
-              <q-icon color="brown-9" name="email" />
-            </q-item-section>
-
-            <q-item-section>購物車</q-item-section>
-          </q-item>
-
-          <q-item class="rwdmd" clickable v-ripple v-if="isLogin" outline color="amber-5" icon="logout" @click="logout">
-            <q-item-section avatar>
-              <q-icon color="brown-9" name="email" />
-            </q-item-section>
-
-            <q-item-section>登出</q-item-section>
-          </q-item>
-
-        </q-list>
-
       </div>
     </q-drawer>
 
-    <q-footer bordered class="bg-brown-9 text-amber-5 text-center footer">
+    <q-footer bordered class="bg-brown-9 text-amber-5 text-center">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar>
-          </q-avatar>
-          <div class="text-h6 q-mb-lg"> 本網站僅為專題作品使用 </div>
+          <div class="text-h6 footerword"> 0 </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

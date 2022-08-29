@@ -28,7 +28,8 @@
 
     <div class="q-pa-md" style="width: 85%; margin: auto;">
       <q-card>
-        <q-tabs v-model="tab" dense class="text-brown-4 bg-amber-4" active-color="amber-5" active-bg-color="brown-9"
+        <!-- class="text-brown-4 bg-amber-4" active-color="amber-5" active-bg-color="brown-9" indicator-color="white" -->
+        <q-tabs v-model="tab" dense class="text-brown-4 bg-white" active-color="brown-9" active-bg-color="amber-5"
           indicator-color="white" align="justify">
           <q-tab class="text-h5 text-overline" style="height: 80px;" name="new" icon="flare" label="本季新品" />
           <q-tab class="text-h5 text-overline" style="height: 80px;" name="hot" icon="local_fire_department"
@@ -41,8 +42,8 @@
 
           <!--  col-xs-12 col-sm-4 col-md-3 -->
           <q-tab-panel name="new">
-            <div class="q-py-lg row items-start q-gutter-md q-ma-sm justify-center" v-if='products.length > 0'>
-              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products"
+            <div class="row q-gutter-sm q-py-md q-ma-xs justify-center" v-if='products.length > 0'>
+              <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3 " v-for="product in products"
                 :key='product._id'>
                 <ProductsCard :product="product" class="text-white bg-amber-2" />
               </q-card>
@@ -55,7 +56,7 @@
           </q-tab-panel>
 
           <q-tab-panel name="hot">
-            <div class="q-py-lg row items-start q-gutter-md q-ma-sm justify-center" v-if='products.length > 0'>
+            <div class="row q-gutter-sm q-py-md q-ma-xs justify-center" v-if='products.length > 0'>
               <q-card class="my-card q-ma-md col-xs-12 col-sm-4 col-md-3" v-for="product in products"
                 :key='product._id'>
                 <ProductsCard :product="product" class="text-white bg-amber-2 " />

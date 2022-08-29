@@ -24,23 +24,33 @@
 </style>
 
 <template>
-  <q-card product-card class="productscard">
-    <router-link :to="'/product/' + product._id" style="text-decoration:none;">
-      <q-img :src='product.image' />
-      <q-card-section class="text-brown-10 text-weight-bold">
-        <div class="text-h6 productname">{{ product.name }}</div>
-        <div class="text-subtitle2 text-overline productprice">${{ product.price }}</div>
-      </q-card-section>
-    </router-link>
+    <!-- <router-link :to="'/product/' + product._id" style="text-decoration:none;"> -->
+  <q-card product-card class=" column productscard cursor-pointer full-height" @click="goProduct(product._id)">
+        <q-img :src='product.image' />
+
+        <div class="text-h6 text-brown-10 q-px-sm q-pt-sm text-weight-bold productname">{{ product.name }}</div>
+      <q-space/>
+      <div class="text-brown-10 text-weight-bold">
+
+        <div class="text-subtitle2 text-overline q-px-sm productprice">${{ product.price }}</div>
+      </div>
   </q-card>
+    <!-- </router-link> -->
 </template>
 
 <script setup>
 import { useUserStore } from 'src/stores/user'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const user = useUserStore()
 const { addCart } = user
 const props = defineProps(['product'])
+
+const goProduct = (productId) => {
+  router.push('/product/' + productId)
+}
 
 // defineProps(['product'])
 

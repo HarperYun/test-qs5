@@ -3,6 +3,7 @@
 body {
   overflow-x: hidden;
 }
+
 </style>
 
 <template>
@@ -10,7 +11,7 @@ body {
     <h5><b>商品管理</b></h5>
   </div>
 
-  <div class="q-ma-md ">
+  <div class="window-width text-center q-ma-lg">
     <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)"
       label="新增商品" />
   </div>
@@ -88,8 +89,8 @@ body {
     <p>沒有商品</p>
   </q-list>
 
-  <div class="q-ma-md ">
-    <q-btn class="justify-center" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)"
+  <div class="window-width text-center q-ma-lg">
+    <q-btn class="justify-center addbtn" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)"
       label="新增商品" />
   </div>
 

@@ -16,6 +16,23 @@
   width: 35vw;
   margin: auto;
 }
+
+.textsize {
+  font-size: 15px;
+}
+
+.textspan {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.updatebtn {
+  width: 30%;
+  height: 5vh;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 </style>
 
 <template>
@@ -24,21 +41,27 @@
   </div>
 
   <q-form @submit.prevent="submit">
-    <q-card class="membercard q-pa-md text-h6 text-center">
+    <q-card class="membercard q-pa-md textsize text-center">
       <!-- <pre>{{ user }}</pre> -->
       <q-avatar class="avatar q-mt-lg">
         <img :src="avatar">
       </q-avatar>
-      <q-card-section class="personalinformation text-left q-mt-lg">會員帳號：{{ user.account }}</q-card-section>
-      <q-card-section class="personalinformation text-left">會員信箱：{{ user.email }}</q-card-section>
+      <q-card-section class="personalinformation text-left q-mt-lg"><span class="textspan">會員帳號：</span>{{ user.account }}</q-card-section>
+      <q-card-section class="personalinformation text-left"><span class="textspan">會員信箱：</span>{{ user.email }}</q-card-section>
       <q-card-section class="personalinformation text-left">
-        <p>手機號碼：{{ user.phonenumber }}</p>
-        <q-input v-model="user.phonenumber" label="請輸入手機號碼" />
+        <p><span class="textspan">手機號碼：</span>{{ newdata.phonenumber }}</p>
+        <q-input v-if="opedEditNum" v-model="newdata.phonenumber" label="請輸入手機號碼" />
+        <q-btn v-if="opedEditNum" class="bg-amber-5 text-brown-9 self-end" @click="opedEditNum = !opedEditNum" label="確認" />
+        <q-btn v-if="!opedEditNum" class="bg-brown-6 text-white self-end" @click="opedEditNum = !opedEditNum" label="編輯" />
       </q-card-section>
-      <!-- <q-card-section class="personalinformation text-left q-mb-xl">
-        <p>收件地址：</p>{{ user.address }}
-      </q-card-section> -->
-      <q-btn class="bg-green-10 text-white self-end" type="submit" label="更新" />
+      <q-card-section class="personalinformation text-left">
+        <p><span class="textspan">收件地址：</span>{{ newdata.address }}</p>
+        <q-input v-if="opedEditAdd" v-model="newdata.address" label="請輸入收件地址" />
+        <q-btn v-if="opedEditAdd" class="bg-amber-5 text-brown-9 self-end" @click="opedEditAdd = !opedEditAdd" label="確認" />
+        <q-btn v-if="!opedEditAdd" class="bg-brown-6 text-white self-end" @click="opedEditAdd = !opedEditAdd" label="編輯" />
+      </q-card-section>
+
+      <q-btn class="bg-amber-5 text-brown-9 updatebtn q-ma-lg q-mt-xl" type="submit" label="更 新" />
 
     </q-card>
   </q-form>
@@ -57,13 +80,21 @@ import { useUserStore } from '@/stores/user'
 const user = useUserStore()
 const { avatar } = storeToRefs(user)
 
+const opedEditNum = ref(false)
+const opedEditAdd = ref(false)
+
+const newdata = reactive({
+  phonenumber: '',
+  address: ''
+})
+
 const submit = async () => {
   // create a form
-  const newdata = new FormData()
-  newdata.append('phonenumber', user.phonenumber)
-  newdata.append('address', user.address)
+  // const newdata = new FormData()
+  // newdata.append('phonenumber', user.phonenumber)
+  // newdata.append('address', user.address)
   try {
-    const { data } = await apiAuth.patch('/users/', newdata)
+    const { data } = await apiAuth.patch('/users', newdata)
     Swal.fire({
       icon: 'success',
       title: '成功',
@@ -81,6 +112,12 @@ const submit = async () => {
 
   // send update to backend
 }
+
+const init = () => {
+  newdata.phonenumber = user.phonenumber
+  newdata.address = user.address
+}
+init()
 // 取得會員資料
 // const init = async () => {
 //   try {
