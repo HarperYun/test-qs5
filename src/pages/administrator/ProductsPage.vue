@@ -3,7 +3,6 @@
 body {
   overflow-x: hidden;
 }
-
 </style>
 
 <template>
@@ -76,7 +75,9 @@ body {
       <q-item-section avatar>
         <img style="max-width: 10vw;" :src='product.image'>
       </q-item-section>
-      <q-item-section>{{ product.name }}</q-item-section>
+      <q-item-section>{{  product.name  }}</q-item-section>
+      <!-- 可去掉 -->
+      <q-toggle v-model="value" label="是否上架" color="brown-9" />
       <q-item-section class="q-pa-sm q-gutter-sm justify-end">
         <q-btn class="bg-green-10 text-white self-end" style="" @click="openDialog(product._id, idx)"
           icon='border_color' label="編輯" />
@@ -90,8 +91,8 @@ body {
   </q-list>
 
   <div class="window-width text-center q-ma-lg">
-    <q-btn class="justify-center addbtn" color="blue-grey-10 text-teal-2" icon="add_circle_outline" @click="openDialog('', -1)"
-      label="新增商品" />
+    <q-btn class="justify-center addbtn" color="blue-grey-10 text-teal-2" icon="add_circle_outline"
+      @click="openDialog('', -1)" label="新增商品" />
   </div>
 
   <!-- ----------------------------------------------------------------------------------------- -->
@@ -99,7 +100,7 @@ body {
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
+import { reactive, ref, watch } from 'vue'
 import Swal from 'sweetalert2'
 import { apiAuth } from 'boot/axios'
 
@@ -210,4 +211,8 @@ const init = async () => {
   }
 }
 init()
+
+// 可去掉
+const value = ref(true)
+
 </script>
