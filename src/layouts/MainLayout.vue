@@ -18,6 +18,10 @@ html {
   display: none;
 }
 
+div span {
+  cursor: pointer;
+}
+
 @media(min-width: 767px) {
   .slogen {
     display: none;
@@ -201,11 +205,17 @@ html {
     </q-drawer>
 
     <q-footer bordered class="bg-brown-9 text-amber-5 text-center">
-      <q-toolbar>
-        <q-toolbar-title>
-          <div class="text-h6 footerword"> 0 </div>
-        </q-toolbar-title>
-      </q-toolbar>
+      <!-- <q-toolbar> -->
+      <!-- <q-toolbar-title></q-toolbar-title> -->
+      <div class="q-pa-sm">
+        <div class="q-px-xs q-pb-xs q-pt-md">
+          <span>最新消息</span>&ensp;｜&ensp;<span>常見問題</span>&ensp;｜&ensp;<span>門市資訊</span>&ensp;｜&ensp;<span>會員權益</span>&ensp;｜&ensp;<span>退換貨服務</span>
+        </div>
+        <div class="q-pa-xs">MON-FRI,&ensp;10:00-20:00&emsp;TEL:(00)0000-0000&ensp;/&ensp;FAX:(00)0000-0000</div>
+        <div class="q-pa-xs">service@jingming.com.tw</div>
+        <div class="q-pa-sm">2022&ensp;JingMi.&ensp;All&ensp;Rights&ensp;Reserved.</div>
+      </div>
+      <!-- </q-toolbar> -->
     </q-footer>
 
     <q-page-container>
