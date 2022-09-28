@@ -6,27 +6,33 @@
   transform: translateY(-50%);
 }
 
+.switch {
+  font-size: 14px;
+  margin: none;
+}
 </style>
 
 <template>
 
   <div class="q-pa-md row q-gutter-md window-hight window-width justify-center ">
-    <q-card class="my-card text-brown-9 cardcenter" style="width: 400px; background-color: rgb(255, 251, 237); border:2px solid #F2C037; border-radius: 15px;">
+    <q-card class="my-card text-brown-9 cardcenter"
+      style="width: 400px; background-color: rgb(255, 251, 237); border:2px solid #F2C037; border-radius: 15px;">
 
       <q-card-section class="text-center">
         <h6><b>註冊帳號</b></h6>
+        <h6 class="switch">已有帳號？點此<span to="/login"><b>登入</b></span></h6>
       </q-card-section>
 
       <q-form @submit="register" @reset="reset" class="q-gutter-md">
         <q-card-section>
-          <q-input filled v-model="form.email" label="信箱 *" lazy-rules :rules="rules.email"/>
-          <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account"/>
-          <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password"/>
+          <q-input filled v-model="form.email" label="信箱 *" lazy-rules :rules="rules.email" />
+          <q-input filled v-model="form.account" label="帳號 *" lazy-rules :rules="rules.account" />
+          <q-input filled v-model="form.password" label="密碼 *" lazy-rules :rules="rules.password" />
         </q-card-section>
 
         <q-card-section>
           <div class="q-pa-md q-gutter-sm">
-            <q-btn type="submit" color="brown-9" label="註冊" :loading="loading"/>
+            <q-btn type="submit" color="brown-9" label="註冊" :loading="loading" />
             <q-btn type="reset" color="white" text-color="black" label="清除" />
           </div>
         </q-card-section>
