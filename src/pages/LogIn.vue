@@ -17,7 +17,7 @@
       style="width: 400px; background-color: rgb(255, 251, 237); border:2px solid #F2C037; border-radius: 15px;">
 
       <q-card-section class="text-center">
-        <h6><b>登入帳號</b></h6>
+        <h6><b>登入 帳號</b></h6>
         <!-- <h6 class="switch">沒有帳號？點此<span to="/signup"><b>註冊</b></span></h6> -->
       </q-card-section>
       <!-- @reset="reset" -->
