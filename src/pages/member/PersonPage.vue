@@ -32,6 +32,10 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.m-form {
+  margin-bottom: 5%;
+}
 </style>
 
 <template>
@@ -39,21 +43,21 @@
     <h5><b>會員資料</b></h5>
   </div>
 
-  <q-form @submit.prevent="submit">
+  <q-form @submit.prevent="submit" class="m-form">
     <q-card class="membercard q-pa-md textsize text-center">
       <!-- <pre>{{ user }}</pre> -->
       <q-avatar class="avatar q-mt-lg">
         <img :src="avatar">
       </q-avatar>
       <q-card-section class="personalinformation q-px-xl text-left q-mt-lg">
-        <span class="textspan">會員帳號：</span>{{  user.account  }}
+        <span class="textspan">會員帳號：</span>{{ user.account }}
       </q-card-section>
       <q-card-section class="personalinformation q-px-xl text-left">
-        <span class="textspan">會員信箱：</span>{{  user.email  }}
+        <span class="textspan">會員信箱：</span>{{ user.email }}
       </q-card-section>
       <q-card-section class="personalinformation q-px-xl text-left">
         <p>
-          <span class="textspan">手機號碼：</span>{{  newdata.phonenumber  }}
+          <span class="textspan">手機號碼：</span>{{ newdata.phonenumber }}
         </p>
         <q-input v-if="opedEditNum" v-model="newdata.phonenumber" label="請輸入手機號碼" />
         <q-btn v-if="opedEditNum" class="bg-amber-5 text-brown-9 self-end" @click="opedEditNum = !opedEditNum"
@@ -62,7 +66,7 @@
           label="編輯" />
       </q-card-section>
       <q-card-section class="personalinformation q-px-xl text-left">
-        <p><span class="textspan">收件地址：</span>{{  newdata.address  }}</p>
+        <p><span class="textspan">收件地址：</span>{{ newdata.address }}</p>
         <q-input v-if="opedEditAdd" v-model="newdata.address" label="請輸入收件地址" />
         <q-btn v-if="opedEditAdd" class="bg-amber-5 text-brown-9 self-end" @click="opedEditAdd = !opedEditAdd"
           label="確認" />
