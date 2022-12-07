@@ -18,7 +18,7 @@
 
       <q-card-section class="text-center">
         <h6><b>登入帳號</b></h6>
-        <!-- <h6 class="switch">沒有帳號？點此<span to="/signup"><b>註冊</b></span></h6> -->
+        <!-- <h6 class="switch">沒有帳號？點此<span to="/signup"><b>註冊 </b></span></h6> -->
       </q-card-section>
       <!-- @reset="reset" -->
       <q-form @submit="login" class="q-gutter-md">
